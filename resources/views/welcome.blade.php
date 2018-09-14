@@ -89,8 +89,7 @@
             <a href="#">Powered By Laravel</a>
             <a href="#">© HELLOHXR 2018. All rights reserved</a>
             <a href="#">浙ICP备18040205号</a>
-            <a href="https://forge.laravel.com">Forge</a>
-            <a href="https://github.com/laravel/laravel">GitHub</a>
+            <a href="https://github.com/huangxiangrongphper">GitHub</a>
         </div>
     </body>
 </html>
