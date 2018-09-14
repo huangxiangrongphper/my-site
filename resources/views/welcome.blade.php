@@ -81,17 +81,16 @@
                     稍等一下.....
                 </div>
                 <h4>最新功能即将上线</h4>
-
-                <hr>
-                <div class="links">
-                    <a href="#">Developed By Flourishing</a>
-                    <a href="#">Powered By Laravel</a>
-                    <a href="#">© HELLOHXR 2018. All rights reserved</a>
-                    <a href="#">浙ICP备18040205号</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
             </div>
+        </div>
+        <hr>
+        <div class="links">
+            <a href="#">Developed By Flourishing</a>
+            <a href="#">Powered By Laravel</a>
+            <a href="#">© HELLOHXR 2018. All rights reserved</a>
+            <a href="#">浙ICP备18040205号</a>
+            <a href="https://forge.laravel.com">Forge</a>
+            <a href="https://github.com/laravel/laravel">GitHub</a>
         </div>
     </body>
 </html>
