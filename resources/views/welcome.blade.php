@@ -78,7 +78,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel5.7
+                    小丁是我好朋友
                 </div>
 
                 <div class="links">
