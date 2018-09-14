@@ -78,7 +78,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    小丁是我好朋友
+                    稍等一下.....
                 </div>
 
                 <div class="links">
