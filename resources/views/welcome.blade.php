@@ -81,6 +81,7 @@
                     稍等一下.....
                 </div>
 
+                <hr>
                 <div class="links">
                     <a href="#">Developed By Flourishing</a>
                     <a href="#">Powered By Laravel</a>
