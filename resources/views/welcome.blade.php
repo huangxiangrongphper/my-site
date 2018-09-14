@@ -82,10 +82,10 @@
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://nova.laravel.com">Nova</a>
+                    <a href="#">Developed By Flourishing</a>
+                    <a href="#">Powered By Laravel</a>
+                    <a href="#">© HELLOHXR 2018. All rights reserved</a>
+                    <a href="#">浙ICP备18040205号</a>
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
