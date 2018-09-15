@@ -16,3 +16,5 @@ Route::get('/', function () {
 });
 
 Route::post('/deploy','DeploymentController@deploy');
+
+Route::any('/wechat', 'WeChatController@serve');
