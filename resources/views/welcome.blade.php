@@ -78,7 +78,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    稍等一下.....
+                    稍等一下......
                 </div>
                 <h3>新功能即将上线</h3>
             </div>
