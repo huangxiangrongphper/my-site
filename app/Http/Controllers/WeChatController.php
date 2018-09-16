@@ -27,6 +27,7 @@ class WeChatController extends Controller
                     break;
                 case 'text':
                     if($message['Content'] == '肖彤'){
+                        sleep(1);
                         return '黄向荣喜欢你💕';
                     }
                     if($message['Content'] == '谁是这个世界上最漂亮的女人?'){
