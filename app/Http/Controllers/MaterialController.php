@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Foundation\Application;
+use EasyWeChat\Work\Application;
 use Illuminate\Http\Request;
 
 class MaterialController extends Controller
