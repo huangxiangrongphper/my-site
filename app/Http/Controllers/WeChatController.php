@@ -30,13 +30,14 @@ class WeChatController extends Controller
                         return '黄向荣喜欢你💕';
                     }
                     if($message['Content'] == '谁是这个世界上最漂亮的女人?'){
+                        sleep(1);
                         return "额...我想想🤔";
-                        sleep(2);
-                        return '肖彤啊😁';
                     }
                     if($message['Content'] == '小丁'){
                         return '黄向荣和你是好朋友👬';
                     }
+                    sleep(2);
+                    return '肖彤啊😁';
                     break;
                 case 'image':
                     return '收到图片消息';
