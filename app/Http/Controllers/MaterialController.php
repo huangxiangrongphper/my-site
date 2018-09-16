@@ -16,12 +16,12 @@ class MaterialController extends Controller
      */
     public function __construct(Application $material)
     {
-        $this->material = $material->material;
+        $this->material = $material;
     }
 
     public function image()
     {
-        $image = $this->material
+        $image = $this->material->material
             ->uploadImage(public_path().'/images/qrcode_for_gh_c25035a188af_258.jpg');
 
         return $image;
