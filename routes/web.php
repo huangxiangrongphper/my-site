@@ -12,7 +12,9 @@
 */
 
 Route::get('/', function () {
-    $language = $this->comment(\Illuminate\Foundation\Inspiring::quote());
+   $language = Artisan::command('inspire', function () {
+        $this->comment(\Illuminate\Foundation\Inspiring::quote());
+    });
     return view('welcome',compact('language'));
 });
 
