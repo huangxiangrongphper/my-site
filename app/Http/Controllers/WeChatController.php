@@ -26,8 +26,8 @@ class WeChatController extends Controller
                 case 'text':
                     if($message['Content'] == '肖彤'){
                         return '黄向荣喜欢你';
-                        break;
                     }
+                    break;
                 case 'image':
                     return '收到图片消息';
                     break;
