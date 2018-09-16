@@ -2,27 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use EasyWeChat\Work\Application;
-use Illuminate\Http\Request;
 
 class MaterialController extends Controller
 {
-    public $material;
-
-    /**
-     * MaterialController constructor.
-     *
-     * @param $material
-     */
-    public function __construct(Application $material)
-    {
-        $this->material = $material;
-    }
-
+    
     public function image()
     {
-        $image = $this->material->material
-            ->uploadImage(public_path().'/images/qrcode_for_gh_c25035a188af_258.jpg');
+        $app = app('wechat.official_account');
+        $image = $app->material->uploadImage(public_path().'/images/qrcode_for_gh_c25035a188af_258.jpg');
 
         return $image;
     }
