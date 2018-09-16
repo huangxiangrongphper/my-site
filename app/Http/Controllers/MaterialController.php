@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 
+use EasyWeChatComposer\EasyWeChat;
+
 class MaterialController extends Controller
 {
 
