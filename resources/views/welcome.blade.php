@@ -80,7 +80,7 @@
                 <div class="title m-b-md">
                     稍等一下.....
                 </div>
-                <h4>新功能即将上线hahadsf</h4>
+                <h4>新功能即将上线hahadsfsdsdfsfd</h4>
             </div>
         </div>
         <hr>
