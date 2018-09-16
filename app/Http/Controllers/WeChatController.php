@@ -29,7 +29,7 @@ class WeChatController extends Controller
                     if($message['Content'] == '肖彤'){
                         return '黄向荣喜欢你💕';
                     }
-                    if($message['Content'] == '谁是这个世界上最漂亮的女人'){
+                    if($message['Content'] == '谁是这个世界上最漂亮的女人?'){
                         return '肖彤啊😁';
                     }
                     if($message['Content'] == '小丁'){
