@@ -21,7 +21,9 @@ class WeChatController extends Controller
         $app->server->push(function($message){
             switch ($message['MsgType']) {
                 case 'event':
-                    return '收到事件消息';
+                    if($message['Event'] == 'subscribe'){
+                        return 'Thank you, friend. It\'s fate to meet.🙂😊';
+                    }
                     break;
                 case 'text':
                     if($message['Content'] == '肖彤'){
