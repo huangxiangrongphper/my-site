@@ -12,7 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $language = $this->comment(\Illuminate\Foundation\Inspiring::quote());
+    return view('welcome',compact('language'));
 });
 
 Route::post('/deploy','DeploymentController@deploy');
