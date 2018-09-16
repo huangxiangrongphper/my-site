@@ -29,6 +29,9 @@ class WeChatController extends Controller
                     if($message['Content'] == '肖彤'){
                         return '黄向荣喜欢你💕';
                     }
+                    if($message['Content'] == '小丁'){
+                        return '黄向荣和你是好朋友👬';
+                    }
                     break;
                 case 'image':
                     return '收到图片消息';
