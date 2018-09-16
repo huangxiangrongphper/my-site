@@ -12,10 +12,7 @@
 */
 
 Route::get('/', function () {
-   $language = Artisan::command('inspire', function () {
-        $this->comment(\Illuminate\Foundation\Inspiring::quote());
-    });
-    return view('welcome',compact('language'));
+    return view('welcome');
 });
 
 Route::post('/deploy','DeploymentController@deploy');
