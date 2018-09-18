@@ -9,5 +9,6 @@
 <div class="container">
     @yield('content')
 </div>
+<p>© 2018. All rights reserved.</p>
 </body>
 </html>

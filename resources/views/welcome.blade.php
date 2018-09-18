@@ -13,5 +13,5 @@
         @endforeach
     </div>
     @endforeach
-    {!! $posts->links() !!}  
+    {!! $posts->links() !!}
 @stop
