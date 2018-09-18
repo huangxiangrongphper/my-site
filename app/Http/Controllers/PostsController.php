@@ -12,4 +12,11 @@ class PostsController extends Controller
         $discussions = Discussion::latest()->get();
         return view('forum.index',compact('discussions'));
     }
+
+    public function show($id)
+    {
+        $discussion = Discussion::findOrFail($id);
+        //$html = $this->markdown->markdown($discussion->body);
+        return view('forum.show',compact('discussion'));
+    }
 }

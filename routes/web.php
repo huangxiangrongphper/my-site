@@ -22,3 +22,5 @@ Route::get('/audio','MaterialController@audio');
 
 Route::get('/user/register','UsersController@register');
 Route::post('/user/register','UsersController@store');
+
+Route::resource('discussions','PostsController');
