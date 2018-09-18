@@ -12,7 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $posts = \App\Post::all();
+    return view('welcome',compact('posts'));
 });
 
 Route::post('/deploy','DeploymentController@deploy');
