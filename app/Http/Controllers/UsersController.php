@@ -21,8 +21,8 @@ class UsersController extends Controller
             'password_confirmation' => 'required|min:6',
         ]);
 
-        User::create($user);
+        User::create(array_merge($user,['avatar'=>'/images/default-avatar.png']));
 
-        return 'ok';
+        return redirect('/');
     }
 }
