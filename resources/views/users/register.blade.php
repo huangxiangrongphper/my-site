@@ -21,7 +21,7 @@
                       <label for="password_confirmation" class="control-label">确认密码:</label>
                       <input id="password_confirmation" name="password_confirmation" type="password" class="form-control" placeholder="请确认密码">
                     </div>
-                    <button type="submit" class="btn btn-primary form-control">马上注册</button>
+                    <button type="submit" class="btn btn-success form-control">马上注册</button>
                 </form>
             </div>
         </div>
