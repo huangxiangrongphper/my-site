@@ -13,5 +13,4 @@
         @endforeach
     </div>
     @endforeach
-    {!! $posts->links() !!}
 @stop
