@@ -5,7 +5,7 @@
         <h2>{{ $post->title }}</h2>
         <img src="{{$post->image}}" alt="" width="360">
         <div class="body">
-            {{$lesson->intro}}
+            {{$post->intro}}
         </div>
     </article>
     @endforeach
