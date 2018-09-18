@@ -16,9 +16,21 @@ use Faker\Generator as Faker;
 $factory->define(App\User::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
-        'email' => $faker->unique()->safeEmail,
-        'password' => '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm', // secret
+        'email' => $faker->safeEmail,
+        'avatar' => $faker->imageUrl(256,256),
+        'confirm_code' => str_random(48),
+        'password' => bcrypt(str_random(10)),
         'remember_token' => str_random(10),
+    ];
+});
+
+$factory->define(App\Discussion::class, function (Faker\Generator $faker) {
+    $user_ids = \App\User::lists('id')->toArray();
+    return [
+        'title' => $faker->sentence,
+        'body' => $faker->paragraph,
+        'user_id' => $faker->randomElement($user_ids),
+        'last_user_id' => $faker->randomElement($user_ids),
     ];
 });
 
