@@ -24,3 +24,4 @@ Route::get('/image','MaterialController@image');
 Route::get('/audio','MaterialController@audio');
 
 Route::get('/user/register','UsersController@register');
+Route::post('/user/register','UsersController@store');
