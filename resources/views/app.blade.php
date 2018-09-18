@@ -10,5 +10,5 @@
     @yield('content')
 </div>
 </body>
-<p>版权所有hahahahhuangxiangrong</p>
+<p>版权所有hahahahhuangxiangrong荣哥</p>
 </html>
