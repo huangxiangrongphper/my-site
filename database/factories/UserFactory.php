@@ -24,7 +24,7 @@ $factory->define(App\User::class, function (Faker $faker) {
     ];
 });
 
-$factory->define(App\Discussion::class, function (Faker\Generator $faker) {
+$factory->define(App\Discussion::class, function (Faker $faker) {
     $user_ids = \App\User::pluck('id')->toArray();
     return [
         'title' => $faker->sentence,
