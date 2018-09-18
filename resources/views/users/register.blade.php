@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-md-offset-3" role="main">
-                <form action="/register" method="POST" accept-charset="UTF-8">
+                <form action="/user/register" method="POST" accept-charset="UTF-8">
                     {{ csrf_field() }}
                     <div class="form-group">
                         <label for="name" class="control-label">用户名:</label>

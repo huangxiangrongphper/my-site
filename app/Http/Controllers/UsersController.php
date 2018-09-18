@@ -22,5 +22,7 @@ class UsersController extends Controller
         ]);
 
         User::create($user);
+
+        return 'ok';
     }
 }
