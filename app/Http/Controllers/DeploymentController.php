@@ -10,7 +10,7 @@ class DeploymentController extends Controller
     public function deploy(Request $request)
     {
         Log::info(system("whoami"));
-        $commands = ['cd /var/www/my-site', 'git pull'];
+        $commands = ['cd /var/www/my-site', 'sudo git pull'];
         $signature = $request->header('X-Hub-Signature');
         $payload = file_get_contents('php://input');
         if ($this->isFromGithub($payload, $signature)) {
