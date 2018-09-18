@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-md-6 col-md-offset-3" role="main">
                 <form action="/register" method="POST" accept-charset="UTF-8">
-                    {{ carf_field() }}
+                    {{ csrf_field() }}
                     <div class="form-group">
                         <label for="name" class="control-label">用户名:</label>
                         <input id="name" name="name" type="text" class="form-control" placeholder="请输入您的用户名">
