@@ -11,10 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    $posts = \App\Post::latest()->paginate(15);
-    return view('welcome',compact('posts'));
-});
+Route::get('/','PostsController@index');
 
 Route::post('/deploy','DeploymentController@deploy');
 
