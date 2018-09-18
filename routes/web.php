@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    $posts = \App\Post::paginate(15);
+    $posts = \App\Post::all();
     return view('welcome',compact('posts'));
 });
 
