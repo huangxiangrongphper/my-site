@@ -24,7 +24,6 @@ class SendWelcomeEmail
      */
     public function handle(UserRegistered $event)
     {
-        //$this->mailer->welcome($event->user);
-        dd("执行了");
+        $this->mailer->welcome($event->user);
     }
 }
