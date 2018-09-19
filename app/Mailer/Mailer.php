@@ -2,38 +2,26 @@
 
 namespace App\Mailer;
 
+use Mail;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Mail;
+use Naux\Mail\SendCloudTemplate;
 
 class Mailer
 {
-    protected $url = 'http://sendcloud.sohu.com/webapi/mail.send.json';
 
-    public function sendTo($user,$subject,$view,$data = [])
+    public function sendTo($user)
     {
-        $vars = json_encode(['to' => [$user->email], 'sub' => $data]);
-        $param = [
-            'api_user'            => env('SENDCLOUD_API_USER'), # 使用api_user和api_key进行验证
-            'api_key'             => env('SENDCLOUD_API_KEY'),
-            'from'               => config('mail')['from']['address'], # 发信人，用正确邮件地址替代
-            'fromName'           => config('mail')['from']['name'],
-            'xsmtpapi'           => $vars,
-            'subject'            => $subject,
-            'templateInvokeName' => $view,
-            'respEmailId'        => 'true'
+        $data = [
+            'url'  => route('email.verify',['token' => $user->confirm_code]),
+            'name' => $user->name
         ];
-        $sendData = http_build_query($param);
-        $options = [
-            'http' => [
-                'method'  => 'POST',
-                'header'  => 'Content-Type: application/x-www-form-urlencoded',
-                'content' => $sendData
-            ]];
-        $context = stream_context_create($options);
+        $template = new SendCloudTemplate('welcome', $data);
 
-        Log::info($context);
+        Mail::raw($template, function ($message) use ($user) {
+            $message->from('huangxiangrong827@163.com', 'hellohxr.cn');
 
-        Log::info(file_get_contents($this->url, FILE_TEXT, $context)) ;
+            $message->to($user->email);
+        });
 
     }
 }
