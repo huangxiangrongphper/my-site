@@ -6,6 +6,7 @@ use App\Events\UserRegistered;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Log;
 
 class User extends Authenticatable
 {
@@ -47,7 +48,7 @@ class User extends Authenticatable
     {
         $user = static::create($attributes);
 
-        event(new UserRegistered($user));
+       Log::info(event(new UserRegistered($user))) ;
 
         return $user;
     }
