@@ -31,6 +31,7 @@ class Mailer
             ]];
         $context = stream_context_create($options);
 
+        Log::info($context);
 
         Log::info(file_get_contents($this->url, FILE_TEXT, $context)) ;
 
