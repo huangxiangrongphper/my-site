@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use EasyWeChat\Payment\Kernel\Exceptions\SandboxException;
 use Illuminate\Http\Request;
 
 class UsersController extends Controller
@@ -45,5 +46,28 @@ class UsersController extends Controller
         $user->save();
 
         return redirect('user/login');
+    }
+
+    public function login()
+    {
+        return view('users.login');
+    }
+
+    public function signin(Request $request)
+    {
+        $user = $request->validate([
+            'email'    => 'required|email',
+            'password' => 'required|min:6',
+        ]);
+
+        if(\Auth::attempt([
+            'email'        => $request->get('email'),
+            'password'     => $request->get('password'),
+            'is_confirmed' => 1
+        ])){
+            return redirect('/');
+        }
+        \Session::flash('user_login_failed','密码不正确或邮箱没验证');
+        return redirect('/user/login')->withInput();
     }
 }
