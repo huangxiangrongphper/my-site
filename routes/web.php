@@ -23,7 +23,7 @@ Route::get('/audio','MaterialController@audio');
 Route::get('/user/register','UsersController@register');
 Route::get('/verify/token/{confirm_code}',['as' => 'email.verify','uses' => 'UsersController@confirmEmail']);
 Route::post('/user/register','UsersController@store');
-Route::get('/user/login','UsersController@login');
+Route::get('/user/login','UsersController@login')->name('login');
 Route::post('/user/login','UsersController@signin');
 
 Route::get('discussions/index','PostsController@index');
