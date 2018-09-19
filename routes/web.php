@@ -27,3 +27,5 @@ Route::get('/user/login','UsersController@login');
 Route::post('/user/login','UsersController@signin');
 
 Route::resource('discussions','PostsController');
+
+Route::get('/logout','UsersController@logout');
