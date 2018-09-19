@@ -26,8 +26,24 @@ class UsersController extends Controller
             'avatar'=>'/images/default-avatar.png'
         ];
 
-        User::create(array_merge($user,$data));
+        $userdata = array_merge($user,$data);
+
+        User::register($userdata);
 
         return redirect('/');
+    }
+
+    public function confirmEmail($confirm_code)
+    {
+        $user = User::where('confirm_code',$confirm_code)->first();
+        if(is_null($user)){
+            return redirect('/');
+        }
+
+        $user->is_confirmed = 1;
+        $user->confirm_code = str_random(48);
+        $user->save();
+
+        return redirect('user/login');
     }
 }

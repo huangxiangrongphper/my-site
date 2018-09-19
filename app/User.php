@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Events\UserRegistered;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -40,5 +41,14 @@ class User extends Authenticatable
     public function setPasswordAttribute($password)
     {
         $this->attributes['password'] = \Hash::make($password);
+    }
+
+    public static function register(array $attributes)
+    {
+        $user = static::create($attributes);
+
+        event(new UserRegistered($user));
+
+        return $user;
     }
 }
