@@ -24,4 +24,24 @@ class PostsController extends Controller
     {
         return view('forum.create');
     }
+
+    public function store(Request $request)
+    {
+        $post = $request->validate([
+            'title'    => 'required',
+            'body' => 'required',
+        ]);
+
+        $data = [
+            'user_id'       => \Auth::user()->id,
+            'last_user_id'  => \Auth::user()->id,
+        ];
+
+        $post_data = array_merge($post,$data);
+
+        $discussion = Discussion::create($post_data);
+
+        return redirect()->action('PostsController@show',['id'=>$discussion->id]);
+
+    }
 }
