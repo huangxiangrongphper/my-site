@@ -19,4 +19,9 @@ class PostsController extends Controller
         //$html = $this->markdown->markdown($discussion->body);
         return view('forum.show',compact('discussion'));
     }
+
+    public function create()
+    {
+        return view('forum.create');
+    }
 }
