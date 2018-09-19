@@ -7,6 +7,6 @@
 <div class="form-group">
     <div class="editor">
         <label for="body">内容:</label>
-        <input id="body" name="body" type="textarea" class="form-control">
+        <textarea name="body" id="body" class="form-control"></textarea>
     </div>
 </div>
