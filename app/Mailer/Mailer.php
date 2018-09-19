@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Mail;
 
 class Mailer
 {
-    protected $url = 'http://api.sendcloud.net/apiv2/mail/sendtemplate';
+    protected $url = 'http://sendcloud.sohu.com/webapi/mail.send.json';
 
     public function sendTo($user,$subject,$view,$data = [])
     {
