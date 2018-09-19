@@ -55,7 +55,7 @@ class UsersController extends Controller
 
     public function signin(Request $request)
     {
-        $user = $request->validate([
+         $request->validate([
             'email'    => 'required|email',
             'password' => 'required|min:6',
         ]);
