@@ -15,19 +15,18 @@
                         {{ Session::get('user_login_failed') }}
                     </div>
                 @endif
-                {!! Form::open(['url'=>'/user/login']) !!}
-                <!--- Email Field --->
-                <div class="form-group">
-                    {!! Form::label('email','邮箱:') !!}
-                    {!! Form::email('email',null,['class' => 'form-control']) !!}
-                </div>
-                <!--- Password Field --->
-                <div class="form-group">
-                    {!! Form::label('password','密码:') !!}
-                    {!! Form::password('password',['class' => 'form-control']) !!}
-                </div>
-                {!! Form::submit('马上登录',['class' => 'btn btn-success form-control' ]) !!}
-                {!! Form::close() !!}
+                <form action="/user/register" method="POST" accept-charset="UTF-8">
+                        {{ csrf_field() }}
+                    <div class="form-group">
+                        <label for="email" class="control-label">邮箱:</label>
+                        <input id="email" name="email" type="email" class="form-control" placeholder="请填写正确的邮箱地址">
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="control-label">密码:</label>
+                        <input id="password" name="password" type="password" class="form-control" placeholder="请输入您的密码">
+                    </div>
+                    <button type="submit" class="btn btn-success form-control">马上登录</button>
+                </form>
             </div>
         </div>
     </div>
