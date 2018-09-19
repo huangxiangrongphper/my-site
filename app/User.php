@@ -48,7 +48,7 @@ class User extends Authenticatable
     {
         $user = static::create($attributes);
 
-       Log::info(event(new UserRegistered($user))) ;
+        event(new UserRegistered($user));
 
         return $user;
     }

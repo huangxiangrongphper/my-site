@@ -8,10 +8,6 @@ use Illuminate\Http\Request;
 class PostsController extends Controller
 {
 
-
-    /**
-     * PostsController constructor.
-     */
     public function __construct()
     {
         $this->middleware('auth',['only'=>['create','store','edit','update']]);

@@ -2,7 +2,7 @@
 @section('content')
     <div class="jumbotron">
         <div class="container">
-            <h2>欢饮来到 php技术讨论 社区
+            <h2>欢迎来到 php技术讨论 社区
                 <a class="btn btn-danger btn-lg pull-right" href="/discussions/create" role="button">发布新的帖子 »</a>
             </h2>
         </div>
