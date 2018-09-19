@@ -15,7 +15,7 @@
                         {{ Session::get('user_login_failed') }}
                     </div>
                 @endif
-                <form action="/user/register" method="POST" accept-charset="UTF-8">
+                <form action="/user/login" method="POST" accept-charset="UTF-8">
                         {{ csrf_field() }}
                     <div class="form-group">
                         <label for="email" class="control-label">邮箱:</label>
