@@ -31,6 +31,7 @@ class Mailer
             ]];
         $context = stream_context_create($options);
 
+        dd("黄向荣");
         return file_get_contents($this->url, FILE_TEXT, $context);
 
     }
