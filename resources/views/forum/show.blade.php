@@ -53,11 +53,11 @@
                 </div>
                 <hr>
                 @if(Auth::check())
-                <form action="/comment" method="post" accept-charset="UTF-8">
+                <form action="/comment" method="post" accept-charset="UTF-8" v-on:submit="onSubmitForm">
                     {{csrf_field()}}
                     <input type="hidden" name="discussion_id" value="{{ $discussion->id }}">
                 <div class="form-group">
-                    <textarea name="body" id="body"  cols="30" rows="10" class="form-control" ></textarea>
+                    <textarea name="body" id="body"  cols="30" rows="10" class="form-control" v-model="newComment.body"></textarea>
                 </div>
                 <div>
                     <button type="submit" class="btn btn btn-success pull-right">发表评论</button>
@@ -70,7 +70,7 @@
             </div>
         </div>
     </div>
-{{--    <script>
+    <script>
         Vue.http.headers.common['X-CSRF-TOKEN'] = document.querySelector('#token').getAttribute('value');
         new Vue({
             el:'#post',
@@ -104,5 +104,5 @@
                 }
             }
         })
-    </script>--}}
+    </script>
 @stop
