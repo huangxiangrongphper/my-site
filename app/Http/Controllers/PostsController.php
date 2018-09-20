@@ -59,4 +59,9 @@ class PostsController extends Controller
 
         return view('forum.edit',compact('discussion'));
     }
+
+    public function update(Request $request,$id)
+    {
+        dd($id);
+    }
 }
