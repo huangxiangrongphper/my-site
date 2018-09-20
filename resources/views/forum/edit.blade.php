@@ -16,7 +16,7 @@
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary pull-right">更新帖子</button>
-                </form>
+             </form>
             </div>
         </div>
     </div>
