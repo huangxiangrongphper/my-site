@@ -22,7 +22,7 @@
     </div>
     <div class="container">
         <div class="row">
-            < class="col-md-9" role="main" id="post">
+            <div class="col-md-9" role="main" id="post">
                 <div class="blog-post">
                     {!! $html !!}
                 </div>
