@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Comment;
 use Illuminate\Http\Request;
 
 class CommentsController extends Controller
@@ -34,7 +35,17 @@ class CommentsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $comment = $request->validate([
+            'body'    => 'required',
+            'discussion_id' => 'required',
+        ]);
+
+         $comment_data = array_merge($comment,['user_id'=>\Auth::user()->id]);
+
+         Comment::create($comment_data);
+
+         return redirect()->action('PostsController@show',['id'=>$request->get('discussion_id')]);
+
     }
 
     /**
