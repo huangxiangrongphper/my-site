@@ -53,22 +53,22 @@ class PostsController extends Controller
         return redirect()->action('PostsController@show',['id'=>$discussion->id]);
     }
 
-    public function edit($id)
+    public function edit(Request $request,$id)
     {
-        $discussion = Discussion::findOrFail($id);
+        if($request->isMethod('get')){
+            $discussion = Discussion::findOrFail($id);
 
-        return view('forum.edit',compact('discussion'));
-    }
+            return view('forum.edit',compact('discussion'));
+        }else{
+            $request->validate([
+                'title'    => 'required',
+                'body' => 'required',
+            ]);
 
-    public function update(Request $request,$id)
-    {
-        $request->validate([
-            'title'    => 'required',
-            'body' => 'required',
-        ]);
+            $discussion = Discussion::findOrFail($id);
+            $discussion->update($request->all());
+            return redirect()->action('PostsController@show',['id'=>$discussion->id]);
+        }
 
-        $discussion = Discussion::findOrFail($id);
-        $discussion->update($request->all());
-        return redirect()->action('PostsController@show',['id'=>$discussion->id]);
     }
 }

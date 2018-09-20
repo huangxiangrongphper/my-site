@@ -30,7 +30,6 @@ Route::get('discussions/index','PostsController@index');
 Route::get('discussions/show/{id}','PostsController@show');
 Route::get('discussions/create','PostsController@create');
 Route::post('discussions/store','PostsController@store');
-Route::get('discussions/{id}/edit','PostsController@edit');
-Route::post('discussions/{id}/edit','PostsController@update');
+Route::match(['get','post'],'discussions/{id}/edit','PostsController@edit');
 
 Route::get('/logout','UsersController@logout');
