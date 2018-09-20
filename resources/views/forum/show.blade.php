@@ -82,7 +82,7 @@
                     body:''
                 },
                 newPost:{
-                    discussion_id:'{{$discussion->id}}',
+                    discussion_id:'{{$discussion->id}}'?'{{$discussion->id}}':'',
                     user_id:'{{Auth::user()->id}}' ? '{{Auth::user()->id}}':'',
                     body:''
                 }
