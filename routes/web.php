@@ -25,6 +25,7 @@ Route::get('/verify/token/{confirm_code}',['as' => 'email.verify','uses' => 'Use
 Route::post('/user/register','UsersController@store');
 Route::get('/user/login','UsersController@login')->name('login');
 Route::post('/user/login','UsersController@signin');
+Route::post('/user/avatar','UsersController@avatar');
 
 Route::get('discussions/index','PostsController@index');
 Route::get('discussions/show/{id}','PostsController@show');

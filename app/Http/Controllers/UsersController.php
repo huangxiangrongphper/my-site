@@ -71,6 +71,11 @@ class UsersController extends Controller
         return redirect('/user/login')->withInput();
     }
 
+    public function avatar()
+    {
+        return view('users.avatar');
+    }
+
     public function logout()
     {
         \Auth::logout();

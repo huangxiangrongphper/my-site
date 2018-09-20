@@ -7,11 +7,8 @@
     <link rel="stylesheet" href="/css/font-awesome.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/jquery.Jcrop.css">
-    {{--<link rel="stylesheet" href="/fonts/fontawesome-webfont.woff2">--}}
-
     <script src="/js/jquery-2.1.4.min.js"></script>
     <script src="/js/jquery.Jcrop.min.js"></script>
-    {{--<script src="/js/bootstrap.min.js"></script>--}}
     <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.js"></script>
     <script src="/js/jquery.form.js"></script>
     <script src="https://lib.baomitu.com/vue/1.0.4/vue.min.js"></script>
