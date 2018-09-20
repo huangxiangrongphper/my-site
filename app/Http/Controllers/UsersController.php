@@ -106,6 +106,24 @@ class UsersController extends Controller
 
     }
 
+    public function cropAvatar(Request $request)
+    {
+        $photo = $request->get('photo');
+        $width = (int) $request->get('w');
+        $height= (int) $request->get('h');
+        $xAlign = (int) $request->get('x');
+        $yAlign = (int) $request->get('y');
+
+        Image::make($photo)->crop($width,$height,$xAlign,$yAlign)->save();
+
+        $user = \Auth::user();
+        $user->avatar = asset($photo);
+        $user->save();
+
+        return redirect('/user/avatar');
+    }
+
+
     public function logout()
     {
         \Auth::logout();

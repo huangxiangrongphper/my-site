@@ -8,6 +8,7 @@
                     <img src="{{Auth::user()->avatar}}" width="120" class="img-circle" id="user-avatar" alt="">
                     {{--{!! Form::open(['url'=>'/avatar','files'=>true,'id'=>'avatar']) !!}--}}
                     <form action="avatar" method="post" enctype="multipart/form-data" id="avatar">
+                    {{csrf_field()}}
                     <div class="text-center">
                         <button type="button" class="btn btn-success avatar-button" id="upload-avatar">上传新的头像</button>
                     </div>
@@ -22,10 +23,12 @@
                 </div>
             </div>
         </div>
-   {{--     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
             <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    {!! Form::open( [ 'url' => ['/crop/api'], 'method' => 'POST', 'onsubmit'=>'return checkCoords();','files' => true ] ) !!}
+                <form class="modal-content">
+   {{--                 {!! Form::open( [ 'url' => ['/crop/api'], 'method' => 'POST', 'onsubmit'=>'return checkCoords();','files' => true ] ) !!}--}}
+                    <form action="/crop/api" method="post" onsubmit='return checkCoords();' enctype="multipart/form-data">
+                    {{csrf_field()}}
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" style="color: #ffffff">&times;</span></button>
                         <h4 class="modal-title" id="exampleModalLabel">裁剪头像</h4>
@@ -49,12 +52,13 @@
                         <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
                         <button type="submit" class="btn btn-primary">裁剪头像</button>
                     </div>
-                    {!! Form::close() !!}
+                   {{-- {!! Form::close() !!}--}}
+                </form>
                 </div>
             </div>
-        </div>--}}
+        </div>
     </div>
-{{--    <script>
+    <script>
         $(document).ready(function() {
             var options = {
                 beforeSubmit:  showRequest,
@@ -114,5 +118,5 @@
                 }
             }
         }
-    </script>--}}
+    </script>
 @stop
