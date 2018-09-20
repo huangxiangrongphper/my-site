@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use EasyWeChat\Payment\Kernel\Exceptions\SandboxException;
 use Illuminate\Http\Request;
+use Image;
 
 class UsersController extends Controller
 {
@@ -74,6 +75,35 @@ class UsersController extends Controller
     public function avatar()
     {
         return view('users.avatar');
+    }
+
+    public function changeAvatar(Request $request)
+    {
+        $file = $request->file('avatar');
+        $input = array('image' => $file);
+        $rules = array(
+            'image' => 'image'
+        );
+        $validator = \Validator::make($input, $rules);
+        if ( $validator->fails() ){
+            return \Response::json([
+                'success' => false,
+                'errors'  => $validator->getMessageBag()->toArray(),
+            ]);
+        }
+
+        $destinationPath = 'uploads/';
+        $filename = \Auth::user()->id.'_'.time().$file->getClientOriginalName();
+        $file->move($destinationPath,$filename);
+        Image::make($destinationPath.$filename)->fit(400)->save();
+
+
+        return \Response::json([
+            'success' => true,
+            'avatar'  => asset($destinationPath.$filename),
+            'image'  => $destinationPath.$filename,
+        ]);
+
     }
 
     public function logout()
