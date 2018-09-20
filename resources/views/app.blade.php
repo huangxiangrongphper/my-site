@@ -11,7 +11,7 @@
     <script src="/js/jquery-2.1.4.min.js"></script>
     <script src="/js/jquery.Jcrop.min.js"></script>
     {{--<script src="/js/bootstrap.min.js"></script>--}}
-    <script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.js"></script>
     <script src="/js/jquery.form.js"></script>
     <script src="https://lib.baomitu.com/vue/1.0.4/vue.min.js"></script>
     <script src="/js/vue-resource.min.js"></script>
