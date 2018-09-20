@@ -161,6 +161,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        YuanChao\Editor\EndaEditorServiceProvider::class,
+
 
     ],
 
@@ -211,6 +213,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Image' => Intervention\Image\Facades\Image::class,
+        'EndaEditor' => YuanChao\Editor\Facade\EndaEditorFacade::class,
 
     ],
 
