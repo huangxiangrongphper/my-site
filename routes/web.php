@@ -28,6 +28,7 @@ Route::post('/user/login','UsersController@signin');
 Route::get('/user/avatar','UsersController@avatar');
 Route::post('/avatar','UsersController@changeAvatar');
 Route::post('/crop/api','UsersController@cropAvatar');
+Route::post('/post/upload','PostsController@upload');
 
 Route::get('discussions/index','PostsController@index');
 Route::get('discussions/show/{id}','PostsController@show');
