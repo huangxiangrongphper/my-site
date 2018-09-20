@@ -33,3 +33,5 @@ Route::post('discussions/store','PostsController@store');
 Route::match(['get','post'],'discussions/{id}/edit','PostsController@edit');
 
 Route::get('/logout','UsersController@logout');
+
+Route::resource('comment','CommentsController');
