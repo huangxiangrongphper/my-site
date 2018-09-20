@@ -26,7 +26,7 @@ Route::post('/user/register','UsersController@store');
 Route::get('/user/login','UsersController@login')->name('login');
 Route::post('/user/login','UsersController@signin');
 Route::get('/user/avatar','UsersController@avatar');
-Route::get('/avatar','UsersController@changeAvatar');
+Route::post('/avatar','UsersController@changeAvatar');
 Route::post('/crop/api','UsersController@cropAvatar');
 
 Route::get('discussions/index','PostsController@index');
