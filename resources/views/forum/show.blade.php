@@ -54,6 +54,7 @@
                 <hr>
                 @if(Auth::check())
                 <form action="/comment" method="post" accept-charset="UTF-8">
+                    {{csrf_field()}}
                     <input type="hidden" name="discussion_id" value="{{ $discussion->id }}">
                 <div class="form-group">
                     <textarea name="body" id="body"  cols="30" rows="10" class="form-control" ></textarea>
