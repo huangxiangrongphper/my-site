@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Discussion;
 use App\Markdown\Markdown;
 use Illuminate\Http\Request;
+use EndaEditor;
 
 class PostsController extends Controller
 {
@@ -72,5 +73,12 @@ class PostsController extends Controller
             return redirect()->action('PostsController@show',['id'=>$discussion->id]);
         }
 
+    }
+
+    public function upload()
+    {
+        $data = EndaEditor::uploadImgFile('uploads');
+
+        return json_encode($data);
     }
 }
