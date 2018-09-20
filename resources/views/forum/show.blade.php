@@ -77,13 +77,13 @@
             data:{
                 comments:[],
                 newComment:{
-                    name:'{{Auth::user()->name}}',
-                    avatar:'{{Auth::user()->avatar}}',
+                    name:'{{Auth::user()->name}}' ? '{{Auth::user()->name}}':'',
+                    avatar:'{{Auth::user()->avatar}}' ? '{{Auth::user()->avatar}}':'',
                     body:''
                 },
                 newPost:{
                     discussion_id:'{{$discussion->id}}',
-                    user_id:'{{Auth::user()->id}}',
+                    user_id:'{{Auth::user()->id}}' ? '{{Auth::user()->id}}':'',
                     body:''
                 }
             },
@@ -97,8 +97,8 @@
                         this.comments.push(comment);
                     });
                     this.newComment = {
-                        name:'{{Auth::user()->name}}',
-                        avatar:'{{Auth::user()->avatar}}',
+                        name:'{{Auth::user()->name}}' ? '{{Auth::user()->name}}':'',
+                        avatar:'{{Auth::user()->avatar}}' ? '{{Auth::user()->avatar}}':'',
                         body:''
                     };
                 }
