@@ -70,39 +70,5 @@
             </div>
         </div>
     </div>
-    <script>
-        Vue.http.headers.common['X-CSRF-TOKEN'] = document.querySelector('#token').getAttribute('value');
-        new Vue({
-            el:'#post',
-            data:{
-                comments:[],
-                newComment:{
-                    name:'{{Auth::user()->name}}' ? '{{Auth::user()->name}}':'',
-                    avatar:'{{Auth::user()->avatar}}' ? '{{Auth::user()->avatar}}':'',
-                    body:''
-                },
-                newPost:{
-                    discussion_id:'{{$discussion->id}}'?'{{$discussion->id}}':'',
-                    user_id:'{{Auth::user()->id}}' ? '{{Auth::user()->id}}':'',
-                    body:''
-                }
-            },
-            methods:{
-                onSubmitForm:function(e){
-                    e.preventDefault();
-                    var comment = this.newComment;
-                    var post = this.newPost;
-                    post.body = comment.body;
-                    this.$http.post('/comment',post,function(){
-                        this.comments.push(comment);
-                    });
-                    this.newComment = {
-                        name:'{{Auth::user()->name}}' ? '{{Auth::user()->name}}':'',
-                        avatar:'{{Auth::user()->avatar}}' ? '{{Auth::user()->avatar}}':'',
-                        body:''
-                    };
-                }
-            }
-        })
-    </script>
+
 @stop
