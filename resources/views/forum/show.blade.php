@@ -20,13 +20,13 @@
             </div>
         </div>
     </div>
-{{--    <div class="container">
+    <div class="container">
         <div class="row">
             <div class="col-md-9" role="main" id="post">
                 <div class="blog-post">
-                  --}}{{--  {!! $html !!}--}}{{--
+                    {!! $html !!}
                 </div>
-                <hr>
+         {{--       <hr>
                 @foreach($discussion->comments as $comment)
                     <div class="media">
                         <div class="media-left">
@@ -51,8 +51,8 @@
                         @{{ comment.body }}
                     </div>
                 </div>
-                <hr>
-                @if(Auth::check())
+                <hr>--}}
+  {{--              @if(Auth::check())
                 {!! Form::open(['url'=>'/comment','v-on:submit'=>'onSubmitForm']) !!}
                 {!! Form::hidden('discussion_id',$discussion->id) !!}
                 <div class="form-group">
@@ -65,11 +65,11 @@
                 @else
                     {!! Session::put('discount_id', $discussion->id) !!}
                     <a href="/user/login" class="btn btn-block btn-success">登录参与评论</a>
-                @endif
+                @endif--}}
             </div>
         </div>
     </div>
-    <script>
+{{--    <script>
         Vue.http.headers.common['X-CSRF-TOKEN'] = document.querySelector('#token').getAttribute('value');
         new Vue({
             el:'#post',

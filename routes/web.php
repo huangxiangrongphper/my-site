@@ -30,5 +30,6 @@ Route::get('discussions/index','PostsController@index');
 Route::get('discussions/show/{id}','PostsController@show');
 Route::get('discussions/create','PostsController@create');
 Route::post('discussions/store','PostsController@store');
+Route::get('discussions/edit/{id}','PostsController@edit');
 
 Route::get('/logout','UsersController@logout');

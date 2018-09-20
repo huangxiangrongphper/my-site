@@ -51,6 +51,12 @@ class PostsController extends Controller
         $discussion = Discussion::create($post_data);
 
         return redirect()->action('PostsController@show',['id'=>$discussion->id]);
+    }
 
+    public function edit($id)
+    {
+        $discussion = Discussion::findOrFail($id);
+
+        return view('forum.edit',compact('discussion'));
     }
 }
