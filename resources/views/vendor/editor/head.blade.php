@@ -6,15 +6,15 @@
 <script type="text/javascript" src="http://cdn.bootcss.com/codemirror/4.10.0/codemirror.min.js"></script>
 <script type="text/javascript" src="http://cdn.bootcss.com/zeroclipboard/2.2.0/ZeroClipboard.min.js"></script>
 
-<link rel="stylesheet" href="{{ asset('plugin/editor/css/pygment_trac.css') }}">
-<link rel="stylesheet" href="{{ asset('plugin/editor/css/editor.css') }}">
-<script type="text/javascript" src="{{ asset('plugin/editor/js/highlight.js') }}"></script>
-<script type="text/javascript" src="{{ asset('plugin/editor/js/modal.js') }}"></script>
-<script type="text/javascript" src="{{ asset('plugin/editor/js/MIDI.js') }}"></script>
-<script type="text/javascript" src="{{ asset('plugin/editor/js/fileupload.js') }}"></script>
-<script type="text/javascript" src="{{ asset('plugin/editor/js/bacheditor.js') }}"></script>
+<link rel="stylesheet" href="{{ asset('/public/editor/css/pygment_trac.css') }}">
+<link rel="stylesheet" href="{{ asset('/public/editor/css/editor.css') }}">
+<script type="text/javascript" src="{{ asset('/public/editor/js/highlight.js') }}"></script>
+<script type="text/javascript" src="{{ asset('/public/editor/js/modal.js') }}"></script>
+<script type="text/javascript" src="{{ asset('/public/editor/js/MIDI.js') }}"></script>
+<script type="text/javascript" src="{{ asset('/public/editor/js/fileupload.js') }}"></script>
+<script type="text/javascript" src="{{ asset('/public/editor/js/bacheditor.js') }}"></script>
 <meta name="csrf-token" content="{{ csrf_token() }}" />
-<script type="text/javascript" src="{{ asset('plugin/editor/js/bootstrap3-typeahead.js') }}"></script>
+<script type="text/javascript" src="{{ asset('/public/editor/js/bootstrap3-typeahead.js') }}"></script>
 
 <script>
     $.ajaxSetup({
