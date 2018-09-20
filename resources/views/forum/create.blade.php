@@ -3,7 +3,7 @@
     @include('editor::head')
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2" role="main">
+            <div class="col-md-10 col-md-offset-1" role="main">
                 @if($errors->any())
                     <ul class="list-group">
                         @foreach($errors->all() as $error)
