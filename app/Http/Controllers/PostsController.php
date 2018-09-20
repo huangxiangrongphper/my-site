@@ -62,6 +62,13 @@ class PostsController extends Controller
 
     public function update(Request $request,$id)
     {
-        return "hellohxr.cn";
+        $request->validate([
+            'title'    => 'required',
+            'body' => 'required',
+        ]);
+
+        $discussion = Discussion::findOrFail($id);
+        $discussion->update($request->all());
+        return redirect()->action('PostsController@show',['id'=>$discussion->id]);
     }
 }
