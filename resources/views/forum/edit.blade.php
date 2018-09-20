@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2" role="main">
-                <form action="{{url('discussions/edit/'.$discussion->id)}}" method="POST">
+                <form action="{{url('discussions/edit/'.$discussion->id)}}" method="POST" accept-charset="UTF-8">
                     {{csrf_field()}}
                 <div class="form-group">
                     <label for="title" >标题:</label>
