@@ -22,7 +22,7 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-md-9" role="main" id="post">
+            < class="col-md-9" role="main" id="post">
                 <div class="blog-post">
                     {!! $html !!}
                 </div>
@@ -52,20 +52,20 @@
                     </div>
                 </div>
                 <hr>
-  {{--              @if(Auth::check())
-                {!! Form::open(['url'=>'/comment','v-on:submit'=>'onSubmitForm']) !!}
-                {!! Form::hidden('discussion_id',$discussion->id) !!}
+                @if(Auth::check())
+                <form action="/comment" method="post" accept-charset="UTF-8">
+                    <input type="hidden" name="discussion_id" value="{{ $discussion->id }}">
                 <div class="form-group">
-                    {!! Form::textarea('body',null,['class' => 'form-control','v-model'=>'newComment.body']) !!}
+                    <textarea name="body" id="body"  cols="30" rows="10" class="form-control" ></textarea>
                 </div>
                 <div>
-                    {!! Form::submit('发表评论',['class'=>'btn btn-success pull-right']) !!}
+                    <button type="submit" class="btn btn btn-success pull-right">发表评论</button>
                 </div>
-               {!! Form::close() !!}
+            </form>
                 @else
                     {!! Session::put('discount_id', $discussion->id) !!}
                     <a href="/user/login" class="btn btn-block btn-success">登录参与评论</a>
-                @endif--}}
+                @endif
             </div>
         </div>
     </div>
