@@ -26,7 +26,7 @@
                 <div class="blog-post">
                     {!! $html !!}
                 </div>
-         {{--       <hr>
+                <hr>
                 @foreach($discussion->comments as $comment)
                     <div class="media">
                         <div class="media-left">
@@ -51,7 +51,7 @@
                         @{{ comment.body }}
                     </div>
                 </div>
-                <hr>--}}
+                <hr>
   {{--              @if(Auth::check())
                 {!! Form::open(['url'=>'/comment','v-on:submit'=>'onSubmitForm']) !!}
                 {!! Form::hidden('discussion_id',$discussion->id) !!}
