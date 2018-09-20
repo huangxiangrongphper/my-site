@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "11d8b061924d6108fb2746e8a03e234f",
+    "content-hash": "6e39574f8bb8e4b135ca1d08fc9796b7",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -211,16 +211,16 @@
         },
         {
             "name": "easywechat-composer/easywechat-composer",
-            "version": "1.1.0",
+            "version": "1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mingyoung/easywechat-composer.git",
-                "reference": "e0a24198ab5f8c58c867d25978c86624730a5cf6"
+                "reference": "777ce8726affd5a9a31eddb6f025e767765b8c6e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mingyoung/easywechat-composer/zipball/e0a24198ab5f8c58c867d25978c86624730a5cf6",
-                "reference": "e0a24198ab5f8c58c867d25978c86624730a5cf6",
+                "url": "https://api.github.com/repos/mingyoung/easywechat-composer/zipball/777ce8726affd5a9a31eddb6f025e767765b8c6e",
+                "reference": "777ce8726affd5a9a31eddb6f025e767765b8c6e",
                 "shasum": ""
             },
             "require": {
@@ -233,12 +233,7 @@
             },
             "type": "composer-plugin",
             "extra": {
-                "class": "EasyWeChatComposer\\Plugin",
-                "laravel": {
-                    "providers": [
-                        "EasyWeChatComposer\\Laravel\\ServiceProvider"
-                    ]
-                }
+                "class": "EasyWeChatComposer\\Plugin"
             },
             "autoload": {
                 "psr-4": {
@@ -256,7 +251,7 @@
                 }
             ],
             "description": "The composer plugin for EasyWeChat",
-            "time": "2018-09-15T06:39:46+00:00"
+            "time": "2018-09-18T14:23:58+00:00"
         },
         {
             "name": "egulias/email-validator",
@@ -755,16 +750,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.7.3",
+            "version": "v5.7.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "536a024e3ef6b93f55f4039a7f4568efa7e60aea"
+                "reference": "ddb87a87471b452456fbbe1365e1b9ae55483515"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/536a024e3ef6b93f55f4039a7f4568efa7e60aea",
-                "reference": "536a024e3ef6b93f55f4039a7f4568efa7e60aea",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/ddb87a87471b452456fbbe1365e1b9ae55483515",
+                "reference": "ddb87a87471b452456fbbe1365e1b9ae55483515",
                 "shasum": ""
             },
             "require": {
@@ -892,7 +887,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2018-09-11T13:42:55+00:00"
+            "time": "2018-09-20T14:03:45+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -959,26 +954,26 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.46",
+            "version": "1.0.47",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "f3e0d925c18b92cf3ce84ea5cc58d62a1762a2b2"
+                "reference": "a11e4a75f256bdacf99d20780ce42d3b8272975c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/f3e0d925c18b92cf3ce84ea5cc58d62a1762a2b2",
-                "reference": "f3e0d925c18b92cf3ce84ea5cc58d62a1762a2b2",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/a11e4a75f256bdacf99d20780ce42d3b8272975c",
+                "reference": "a11e4a75f256bdacf99d20780ce42d3b8272975c",
                 "shasum": ""
             },
             "require": {
+                "ext-fileinfo": "*",
                 "php": ">=5.5.9"
             },
             "conflict": {
                 "league/flysystem-sftp": "<1.0.6"
             },
             "require-dev": {
-                "ext-fileinfo": "*",
                 "phpspec/phpspec": "^3.4",
                 "phpunit/phpunit": "^5.7.10"
             },
@@ -1039,7 +1034,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2018-08-22T07:45:22+00:00"
+            "time": "2018-09-14T15:30:29+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -1213,16 +1208,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v4.0.3",
+            "version": "v4.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "bd088dc940a418f09cda079a9b5c7c478890fb8d"
+                "reference": "fa6ee28600d21d49b2b4e1006b48426cec8e579c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/bd088dc940a418f09cda079a9b5c7c478890fb8d",
-                "reference": "bd088dc940a418f09cda079a9b5c7c478890fb8d",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/fa6ee28600d21d49b2b4e1006b48426cec8e579c",
+                "reference": "fa6ee28600d21d49b2b4e1006b48426cec8e579c",
                 "shasum": ""
             },
             "require": {
@@ -1260,7 +1255,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2018-07-15T17:25:16+00:00"
+            "time": "2018-09-18T07:03:24+00:00"
         },
         {
             "name": "overtrue/laravel-wechat",
@@ -1367,20 +1362,20 @@
         },
         {
             "name": "overtrue/wechat",
-            "version": "4.1.5",
+            "version": "4.1.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/overtrue/wechat.git",
-                "reference": "3976e7c42d2aecccff6b41f45d2e4314ad5d91a9"
+                "reference": "b9c7b780706e4a6b16658ab43d5667c57ddde498"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/overtrue/wechat/zipball/3976e7c42d2aecccff6b41f45d2e4314ad5d91a9",
-                "reference": "3976e7c42d2aecccff6b41f45d2e4314ad5d91a9",
+                "url": "https://api.github.com/repos/overtrue/wechat/zipball/b9c7b780706e4a6b16658ab43d5667c57ddde498",
+                "reference": "b9c7b780706e4a6b16658ab43d5667c57ddde498",
                 "shasum": ""
             },
             "require": {
-                "easywechat-composer/easywechat-composer": "^1.0",
+                "easywechat-composer/easywechat-composer": "^1.1",
                 "ext-fileinfo": "*",
                 "ext-openssl": "*",
                 "ext-simplexml": "*",
@@ -1426,7 +1421,7 @@
                 "weixin",
                 "weixin-sdk"
             ],
-            "time": "2018-09-05T15:12:01+00:00"
+            "time": "2018-09-20T12:51:32+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -3076,6 +3071,39 @@
                 "environment"
             ],
             "time": "2018-07-29T20:33:41+00:00"
+        },
+        {
+            "name": "yuanchao/laravel-5-markdown-editor",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yccphp/laravel-5-markdown-editor.git",
+                "reference": "420f93671d19b6edff7bd045ed728704c4e083c2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yccphp/laravel-5-markdown-editor/zipball/420f93671d19b6edff7bd045ed728704c4e083c2",
+                "reference": "420f93671d19b6edff7bd045ed728704c4e083c2",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "YuanChao\\Editor\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "yuanchao",
+                    "email": "653069653@qq.com"
+                }
+            ],
+            "description": "Based on the markdown editor laravel 5",
+            "time": "2016-06-06T03:00:54+00:00"
         }
     ],
     "packages-dev": [
@@ -4839,7 +4867,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "yuanchao/laravel-5-markdown-editor": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
