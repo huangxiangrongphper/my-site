@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2" role="main">
-                <form action="{{url('discussions/edit'.$discussion->id)}}">
+                <form action="{{url('discussions/edit'.$discussion->id)}}" method="POST">
                     {{csrf_field()}}
                     {{ method_field('PATCH') }}
                 <div class="form-group">
