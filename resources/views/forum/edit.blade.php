@@ -3,9 +3,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2" role="main">
-                <form action="{{url('discussions/edit'.$discussion->id)}}" method="POST">
+                <form action="{{url('discussions/edit/'.$discussion->id)}}" method="POST">
                     {{csrf_field()}}
-                    {{ method_field('PATCH') }}
                 <div class="form-group">
                     <label for="title" >标题:</label>
                     <input id="title" name="title" type="text" class="form-control" value="{{$discussion->title}}">
