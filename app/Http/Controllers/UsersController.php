@@ -138,12 +138,13 @@ class UsersController extends Controller
             $request->validate([
                 'email'    => 'required|email',
             ]);
-            
+
             $email = $request->get('email');
 
             $user_email = User::findOrFail($email);
 
             if(!$user_email){
+                dd($request->get('email'));
                 \Session::flash('password_reset_failed','没有找到对应邮箱信息');
                 return redirect('/password/reset')->withInput();
             }
