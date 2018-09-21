@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Session;
 use Image;
 use Mail;
 use Naux\Mail\SendCloudTemplate;
+use Auth;
 
 class UsersController extends Controller
 {
