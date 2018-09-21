@@ -188,7 +188,6 @@ class UsersController extends Controller
             ]);
             $email         = $request->get('email');
             $confirm_code  = Session::get('confirm_code','default');
-            dd($confirm_code);
             $user_info = User::where(function($query) use($email,$confirm_code) {
                 $query->where('email',$email)
                     ->where('confirm_code',$confirm_code);
@@ -206,6 +205,7 @@ class UsersController extends Controller
             \Session::flash('password_success','密码重置成功');
             slee(2);
             Auth::loginUsingId($user_info->id);
+            Session::put('confirm_code','default');
             return redirect('/');
         }
     }
