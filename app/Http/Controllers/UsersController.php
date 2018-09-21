@@ -175,8 +175,8 @@ class UsersController extends Controller
 
     public function passwordReset(Request $request)
     {
+        $confirm_code  = $request->input('token');
         if($request->isMethod('get')){
-            dd($request->input('token'));
             return view('users.passwordReset');
         }else{
              $request->validate([
