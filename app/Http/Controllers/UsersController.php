@@ -142,11 +142,11 @@ class UsersController extends Controller
             $email = $request->get('email');
 
             $user_email = User::where(function($query) use($email) {
-                $query->where('email','=',$email)
-                    ->where('is_confirmed','=',1);
+                $query->where('email',$email)
+                    ->where('is_confirmed',1);
              })->get();
 
-            dd($request->$user_email);
+            dd($user_email);
 
             if(!$user_email){
                 \Session::flash('password_reset_failed','没有找到对应邮箱信息');
