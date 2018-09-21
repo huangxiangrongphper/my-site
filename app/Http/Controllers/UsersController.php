@@ -206,11 +206,11 @@ class UsersController extends Controller
             ];
 
             $userdata = array_merge($user,$data);
+            dd($userdata);
 
             User::findOrFail($user_info->id)->delete();
 
             $user_info = User::create($userdata);
-            $user_info->is_confirmed = 1;
 
             \Session::flash('password_success','密码重置成功');
             Auth::loginUsingId($user_info->id);
