@@ -159,7 +159,6 @@ class UsersController extends Controller
             $token = $user_email->confirm_code;
             $this->sendPasswordResetNotification($token,$user_email);
 
-            return back();
         }
     }
 
