@@ -141,7 +141,7 @@ class UsersController extends Controller
 
             $email = $request->get('email');
 
-            $user_email = User::where($email,'email')->pluck('email')->get();
+            $user_email = User::where('email',$email)->get();
 
             dd($user_email);
 
