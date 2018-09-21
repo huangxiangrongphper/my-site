@@ -11,7 +11,7 @@
                     </ul>
                 @endif
                 @if(Session::has('user_register_success'))
-                    <div class="alert alert-danger" role="alert">
+                    <div class="alert alert-success" role="alert">
                         {{ Session::get('user_register_success') }}
                     </div>
                 @endif
