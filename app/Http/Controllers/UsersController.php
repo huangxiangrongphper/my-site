@@ -138,7 +138,7 @@ class UsersController extends Controller
             $request->validate([
                 'email'    => 'required|email',
             ]);
-            dd($request->get('email'));
+            
             $email = $request->get('email');
 
             $user_email = User::findOrFail($email);
