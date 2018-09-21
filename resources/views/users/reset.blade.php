@@ -18,7 +18,7 @@
                 <form action="/password/reset" method="POST" accept-charset="UTF-8">
                     {{ csrf_field() }}
                     <div class="form-group">
-                        <label for="email" class="control-label">邮箱:</label>
+                        <label for="email" class="control-label">重置密码邮箱:</label>
                         <input id="email" name="email" type="email" class="form-control" placeholder="请填写正确的邮箱地址">
                     </div>
                     <button type="submit" class="btn btn-success form-control">发送重置密码链接</button>
