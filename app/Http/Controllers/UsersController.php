@@ -142,8 +142,9 @@ class UsersController extends Controller
             $email = $request->get('email');
 
             $user_email = User::where(function($query) use($email) {
-                $query->where(['email'=>$email,'is_confirmed'=>1]);
-                })->get();
+                $query->where('email',$email)
+                    ->where('is_confirmed','1');
+             })->get();
 
             dd($request->$user_email);
 
