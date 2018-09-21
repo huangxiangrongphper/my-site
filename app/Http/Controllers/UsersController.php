@@ -200,8 +200,6 @@ class UsersController extends Controller
             }
 
             $user_info->email        = $request->get('email');
-            $user_info->password     = bcrypt($request->get('password'));
-            dd($user_info->password );
             $user_info->confirm_code = str_random(48);
             $user_info->save();
             \Session::flash('password_success','密码重置成功');
