@@ -188,11 +188,13 @@ class UsersController extends Controller
             ]);
             $email         = $request->get('email');
             $confirm_code  = Session::get('confirm_code','default');
-            dd($confirm_code);
+
             $user_info = User::where(function($query) use($email,$confirm_code) {
                 $query->where('email',$email)
                     ->where('confirm_code',$confirm_code);
             })->first();
+
+            dd($user_info);
 
             if(!$user_info){
                 \Session::flash('password_failed','没有找到对应的注册用户信息');
