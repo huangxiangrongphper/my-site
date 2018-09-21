@@ -16,7 +16,7 @@
                     </div>
                 @endif
                 @if(Session::has('password_reset_failed'))
-                    <div class="alert alert-success" role="alert">
+                    <div class="alert alert-danger" role="alert">
                         {{ Session::get('password_reset_failed') }}
                     </div>
                 @endif
