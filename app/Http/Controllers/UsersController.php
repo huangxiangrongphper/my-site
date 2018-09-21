@@ -143,13 +143,11 @@ class UsersController extends Controller
 
             $user_email = User::where(function($query) use($email) {
                 $query->where('email',$email)
-                    ->where('is_confirmed',1);
+                      ->where('is_confirmed',1);
              })->first();
 
-            dd($user_email);
-
             if(!$user_email){
-                \Session::flash('password_reset_failed','没有找到对应邮箱信息');
+                \Session::flash('password_reset_failed','没有找到对应邮箱信息或邮箱没激活');
                 return redirect('/password/reset')->withInput();
             }
         }
