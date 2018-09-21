@@ -38,7 +38,7 @@ class UsersController extends Controller
         User::register($userdata);
 
         sleep(2);
-        \Session::flash('user_register_success','恭喜您,注册成功.请马上去邮箱激活🤗');
+        \Session::flash('user_register_success','恭喜您,注册成功.请马上去邮箱激活账号🤗');
 
         return back()->withInput();
     }
