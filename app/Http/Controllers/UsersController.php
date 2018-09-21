@@ -206,6 +206,7 @@ class UsersController extends Controller
             sleep(2);
             Auth::loginUsingId($user_info->id);
             Session::put('confirm_code','default');
+            dd($user_info->password);
             return redirect('/');
         }
     }
