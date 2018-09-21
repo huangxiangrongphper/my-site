@@ -175,6 +175,7 @@ class UsersController extends Controller
 
     public function passwordReset(Request $request)
     {
+        $confirm_code  = $request->input('token');
         if($request->isMethod('get')){
             return view('users.passwordReset');
         }else{
@@ -184,7 +185,6 @@ class UsersController extends Controller
                 'password_confirmation' => 'required|min:6',
             ]);
             $email         = $request->get('email');
-            $confirm_code  = $request->input('token');
             dd($confirm_code);
 
             $user_info = User::where(function($query) use($email,$confirm_code) {
