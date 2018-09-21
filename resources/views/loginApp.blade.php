@@ -36,18 +36,18 @@
                     <li><a id="drop1" type="button" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" role="button" href="#">
                             {{ Auth::user()->name }}
                         </a>
-                    <ul class="dropdown-menu" aria-labelledby="dLabel">
-                        <li><a href="/user/avatar"> <i class="fa fa-user"></i> 更换头像</a></li>
-                        <li><a href="#"> <i class="fa fa-cog"></i> 更换密码</a></li>
-                        <li><a href="#"> <i class="fa fa-heart"></i> 特别感谢</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li> <a href="/logout">  <i class="fa fa-sign-out"></i> 退出登录</a></li>
-                    </ul>
+                        <ul class="dropdown-menu" aria-labelledby="dLabel">
+                            <li><a href="/user/avatar"> <i class="fa fa-user"></i> 更换头像</a></li>
+                            <li><a href="#"> <i class="fa fa-cog"></i> 更换密码</a></li>
+                            <li><a href="#"> <i class="fa fa-heart"></i> 特别感谢</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li> <a href="/logout">  <i class="fa fa-sign-out"></i> 退出登录</a></li>
+                        </ul>
                     </li>
                     <li><img src="{{Auth::user()->avatar}}" class="img-circle" width="50" alt=""></li>
                 @else
-                <li><a href="/user/login">登 录</a></li>
-                <li><a href="/user/register">注 册</a></li>
+                    <li><a href="/user/register">注 册</a></li>
+                    <li><a href="/password/reset">忘记密码?</a></li>
                 @endif
             </ul>
         </div><!--/.nav-collapse -->
