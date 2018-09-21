@@ -185,6 +185,7 @@ class UsersController extends Controller
             ]);
             $email         = $request->get('email');
             $confirm_code  = $request->get('token');
+            dd($confirm_code);
 
             $user_info = User::where(function($query) use($email,$confirm_code) {
                 $query->where('email',$email)
