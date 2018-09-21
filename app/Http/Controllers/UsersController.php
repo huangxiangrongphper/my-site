@@ -155,20 +155,20 @@ class UsersController extends Controller
 
             \Session::flash('password_reset_success','验证信息已发送到您的邮箱,请马上重置您的密码');
             $token = $user_email->confirm_code;
-            $this->sendPasswordResetNotification($token);
+            $this->sendPasswordResetNotification($token,$user_email);
         }
     }
 
-    public function sendPasswordResetNotification($token)
+    public function sendPasswordResetNotification($token,$user_email)
     {
         $data = [
             'url' => route('passwordReset',['token' => $token]),
         ];
         $template = new SendCloudTemplate('hellohxr',$data);
 
-        Mail::raw($template,function ($message) {
+        Mail::raw($template,function ($message) use($user_email) {
             $message->from('huangxiangrong827@163.com','hellohxr.cn');
-            $message->to($this->email);
+            $message->to($user_email->email);
         });
     }
 
