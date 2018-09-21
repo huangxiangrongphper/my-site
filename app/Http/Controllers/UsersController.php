@@ -144,7 +144,7 @@ class UsersController extends Controller
 
             if(!$user_email){
                 \Session::flash('password_reset_failed','没有找到对应邮箱信息');
-                return redirect('password/reset')->withInput();
+                return redirect('/password/reset')->withInput();
             }
         }
     }
