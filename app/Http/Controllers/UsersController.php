@@ -154,6 +154,7 @@ class UsersController extends Controller
             }
 
             \Session::flash('password_reset_success','验证信息已发送到您的邮箱,请马上重置您的密码');
+            sleep(2);
             $token = $user_email->confirm_code;
             $this->sendPasswordResetNotification($token,$user_email);
         }
@@ -178,7 +179,7 @@ class UsersController extends Controller
             return view('users.passwordReset');
         }else{
              $request->validate([
-                'email'    => 'required|email|max:255|unique:users,email',
+                'email'    => 'required|email|max:255',
                 'password' => 'required|min:6|confirmed',
                 'password_confirmation' => 'required|min:6',
             ]);
