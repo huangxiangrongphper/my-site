@@ -141,7 +141,7 @@ class UsersController extends Controller
 
             $email = $request->get('email');
 
-            $user_email = User::all();
+            $user_email = User::where('name','黄兴荣')->first();
 
             dd($user_email);
 
