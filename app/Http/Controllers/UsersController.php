@@ -135,7 +135,17 @@ class UsersController extends Controller
         if($request->isMethod('get')){
             return view('users.reset');
         }else{
+            $request->validate([
+                'email'    => 'required|email|string|max:255|unique:users',
+            ]);
+            $email = $request->get('email');
 
+            $user_email = User::findOrFail($email);
+
+            if(!$user_email){
+                \Session::flash('password_reset_failed','没有找到对应邮箱信息');
+                return redirect('password/reset');
+            }
         }
     }
 }

@@ -10,9 +10,9 @@
                         @endforeach
                     </ul>
                 @endif
-                @if(Session::has('user_login_failed'))
+                @if(Session::has('password_reset_failed'))
                     <div class="alert alert-danger" role="alert">
-                        {{ Session::get('user_login_failed') }}
+                        {{ Session::get('password_reset_failed') }}
                     </div>
                 @endif
                 <form action="/password/reset" method="POST" accept-charset="UTF-8">
