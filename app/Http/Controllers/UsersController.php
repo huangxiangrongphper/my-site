@@ -200,7 +200,7 @@ class UsersController extends Controller
 
             $user_info->email        = $request->get('email');
             $user_info->confirm_code = str_random(48);
-            /*$user_info->password = \Hash::make($request->get('password'));*/
+            $user_info->password = \Hash::make($request->get('password'));
             $user_info->save();
             \Session::flash('password_success','密码重置成功');
             Auth::loginUsingId($user_info->id);
