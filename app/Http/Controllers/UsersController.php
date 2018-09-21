@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use EasyWeChat\Payment\Kernel\Exceptions\SandboxException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use Image;
 use Mail;
 use Naux\Mail\SendCloudTemplate;
@@ -177,8 +178,7 @@ class UsersController extends Controller
     {
         if($request->isMethod('get')){
             $confirm_code  = $request->input('token');
-            session('confirm_code ',$confirm_code);
-            dd(session('confirm_code'));
+           Session::put('confirm_code',$confirm_code);
             return view('users.passwordReset');
         }else{
              $request->validate([
@@ -187,6 +187,8 @@ class UsersController extends Controller
                 'password_confirmation' => 'required|min:6',
             ]);
             $email         = $request->get('email');
+            $confirm_code  = Session::get('confirm_code','default');
+            dd($confirm_code);
             $user_info = User::where(function($query) use($email,$confirm_code) {
                 $query->where('email',$email)
                     ->where('confirm_code',$confirm_code);
