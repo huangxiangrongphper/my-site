@@ -206,7 +206,6 @@ class UsersController extends Controller
             ];
 
             $userdata = array_merge($user,$data);
-            dd($userdata);
 
             User::findOrFail($user_info->id)->delete();
 
