@@ -38,5 +38,6 @@ Route::post('discussions/store','PostsController@store');
 Route::match(['get','post'],'discussions/{id}/edit','PostsController@edit');
 
 Route::get('/logout','UsersController@logout');
+Route::match(['get','post'],'password/email','UsersController@passwordReset')->name('passwordReset');
 
 Route::resource('comment','CommentsController');

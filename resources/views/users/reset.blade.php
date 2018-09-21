@@ -10,8 +10,13 @@
                         @endforeach
                     </ul>
                 @endif
+                @if(Session::has('password_reset_success'))
+                    <div class="alert alert-success" role="alert">
+                        {{ Session::get('password_reset_success') }}
+                    </div>
+                @endif
                 @if(Session::has('password_reset_failed'))
-                    <div class="alert alert-danger" role="alert">
+                    <div class="alert alert-success" role="alert">
                         {{ Session::get('password_reset_failed') }}
                     </div>
                 @endif

@@ -6,6 +6,8 @@ use App\User;
 use EasyWeChat\Payment\Kernel\Exceptions\SandboxException;
 use Illuminate\Http\Request;
 use Image;
+use Mail;
+use Naux\Mail\SendCloudTemplate;
 
 class UsersController extends Controller
 {
@@ -150,6 +152,57 @@ class UsersController extends Controller
                 \Session::flash('password_reset_failed','没有找到对应邮箱信息或邮箱没激活');
                 return redirect('/password/reset')->withInput();
             }
+
+            \Session::flash('password_reset_success','验证信息已发送到您的邮箱,请马上重置您的密码');
+            $token = $user_email->confirm_code;
+            $this->sendPasswordResetNotification($token);
+        }
+    }
+
+    public function sendPasswordResetNotification($token)
+    {
+        $data = [
+            'url' => route('passwordReset',['token' => $token]),
+        ];
+        $template = new SendCloudTemplate('hellohxr',$data);
+
+        Mail::raw($template,function ($message) {
+            $message->from('huangxiangrong827@163.com','hellohxr.cn');
+            $message->to($this->email);
+        });
+    }
+
+    public function passwordReset(Request $request)
+    {
+        if($request->isMethod('get')){
+            return view('users.passwordReset');
+        }else{
+             $request->validate([
+                'email'    => 'required|email|max:255|unique:users,email',
+                'password' => 'required|min:6|confirmed',
+                'password_confirmation' => 'required|min:6',
+            ]);
+            $email         = $request->get('email');
+            $confirm_code  = $request->get('token');
+
+            $user_info = User::where(function($query) use($email,$confirm_code) {
+                $query->where('email',$email)
+                    ->where('confirm_code',$confirm_code);
+            })->first();
+
+            if(!$user_info){
+                \Session::flash('password_failed','没有找到对应的注册用户信息');
+                return back()->withInput();
+            }
+
+            $user_info->email        = $request->get('email');
+            $user_info->password     = bcrypt($request->get('password'));
+            $user_info->confirm_code = str_random(48);
+            $user_info->save();
+            \Session::flash('password_success','密码重置成功');
+            slee(2);
+            Auth::loginUsingId($user_info->id);
+            return redirect('/');
         }
     }
 }
