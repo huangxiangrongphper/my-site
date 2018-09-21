@@ -136,7 +136,7 @@ class UsersController extends Controller
             return view('users.reset');
         }else{
             $request->validate([
-                'email'    => 'required|email|string|max:255|unique:users',
+                'email'    => 'required|email|string|max:255',
             ]);
             $email = $request->get('email');
 
