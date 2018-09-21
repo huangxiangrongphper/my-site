@@ -200,7 +200,9 @@ class UsersController extends Controller
 
             $data = [
                 'confirm_code'=>str_random(48),
-                'avatar'=>$user_info->avatar
+                'name'=>$user_info->name,
+                'avatar'=>$user_info->avatar,
+                'is_confirmed'=>1
             ];
 
             $userdata = array_merge($user,$data);
