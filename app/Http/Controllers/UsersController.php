@@ -207,6 +207,8 @@ class UsersController extends Controller
 
             $userdata = array_merge($user,$data);
 
+            User::findOrFail($user_info->id)->delete();
+            
             $user_info = User::create($userdata);
 
             \Session::flash('password_success','密码重置成功');
