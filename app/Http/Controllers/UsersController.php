@@ -129,4 +129,13 @@ class UsersController extends Controller
         \Auth::logout();
         return redirect('/');
     }
+
+    public function reset(Request $request)
+    {
+        if($request->isMethod('get')){
+            return view('users.reset');
+        }else{
+
+        }
+    }
 }
