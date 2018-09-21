@@ -48,6 +48,7 @@
                 @else
                 <li><a href="/user/login">登 录</a></li>
                 <li><a href="/user/register">注 册</a></li>
+                <li><a href="/password/reset">忘记密码?</a></li>
                 @endif
             </ul>
         </div><!--/.nav-collapse -->
