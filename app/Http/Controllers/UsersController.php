@@ -135,10 +135,10 @@ class UsersController extends Controller
         if($request->isMethod('get')){
             return view('users.reset');
         }else{
-            dd($request->get('email'));
             $request->validate([
-                'email'    => 'required|email|string|max:255',
+                'email'    => 'required|email',
             ]);
+            dd($request->get('email'));
             $email = $request->get('email');
 
             $user_email = User::findOrFail($email);
