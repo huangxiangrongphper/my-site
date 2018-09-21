@@ -66,7 +66,7 @@ class UsersController extends Controller
         ]);
 
          $email     = $request->get('email');
-         $password  = $request->get('password');
+         $password  = bcrypt($request->get('password'));
          dd($password );
         $user = User::where(function($query) use($email,$password) {
             $query->where('email',$email)
