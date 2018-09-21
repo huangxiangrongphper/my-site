@@ -141,9 +141,10 @@ class UsersController extends Controller
 
             $email = $request->get('email');
 
-            $user_email = User::findOrFail($email);
+            $user_email = User::where($email,'email')->pluck('email')->get();
 
-            dd($request->get('user_email'));
+            dd($user_email);
+
             if(!$user_email){
 
                 \Session::flash('password_reset_failed','没有找到对应邮箱信息');
