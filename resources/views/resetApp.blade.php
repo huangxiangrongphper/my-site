@@ -47,7 +47,7 @@
                     <li><img src="{{Auth::user()->avatar}}" class="img-circle" width="50" alt=""></li>
                 @else
                     <li><a href="/user/register">注 册</a></li>
-                    <li><a href="/password/reset">登录</a></li>
+                    <li><a href="/user/login">登 录</a></li>
                 @endif
             </ul>
         </div><!--/.nav-collapse -->
