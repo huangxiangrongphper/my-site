@@ -76,7 +76,7 @@ class UsersController extends Controller
         ])){
             return redirect('/');
         }
-        \Session::flash('user_login_failed','密码不正确或邮箱没验证');
+        \Session::flash('user_login_failed','密码不正确或邮箱没验证🙃');
         return redirect('/user/login')->withInput();
     }
 
@@ -155,7 +155,7 @@ class UsersController extends Controller
              })->first();
 
             if(!$user_email){
-                \Session::flash('password_reset_failed','没有找到对应邮箱信息或邮箱没激活');
+                \Session::flash('password_reset_failed','没有找到对应邮箱信息或邮箱没激活🙃');
                 return redirect('/password/reset')->withInput();
             }
 
@@ -202,7 +202,7 @@ class UsersController extends Controller
             })->first();
 
             if(!$user_info){
-                \Session::flash('password_failed','没有找到对应的注册用户信息');
+                \Session::flash('password_failed','没有找到对应的注册用户信息🙃');
                 return back()->withInput();
             }
 
