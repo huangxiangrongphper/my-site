@@ -174,7 +174,7 @@ class UsersController extends Controller
             $message->from('huangxiangrong827@163.com','hellohxr.cn');
             $message->to($user_email->email);
         });
-        \Session::flash('password_reset_success','验证信息已发送到您的邮箱,请马上重置您的密码');
+        \Session::flash('password_reset_success','验证信息已发送到您的邮箱,请马上重置您的密码🤗');
         return back()->withInput();
     }
 
