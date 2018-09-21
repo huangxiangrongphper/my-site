@@ -181,7 +181,7 @@ class UsersController extends Controller
            Session::put('confirm_code',$confirm_code);
             return view('users.passwordReset');
         }else{
-             $request->validate([
+            $user =  $request->validate([
                 'email'    => 'required|email|max:255',
                 'password' => 'required|min:6|confirmed',
                 'password_confirmation' => 'required|min:6',
@@ -198,11 +198,15 @@ class UsersController extends Controller
                 return back()->withInput();
             }
 
-            $user_info->email        = $request->get('email');
-            $user_info->confirm_code = str_random(48);
-            $user_info->password = \Hash::make($request->get('password'));
-            dd($user_info->password);
-            $user_info->save();
+            $data = [
+                'confirm_code'=>str_random(48),
+                'avatar'=>$user_info->avatar
+            ];
+
+            $userdata = array_merge($user,$data);
+
+            $user_info = User::create($userdata);
+
             \Session::flash('password_success','密码重置成功');
             Auth::loginUsingId($user_info->id);
             Session::put('confirm_code','default');
