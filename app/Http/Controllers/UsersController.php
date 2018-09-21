@@ -37,7 +37,9 @@ class UsersController extends Controller
 
         User::register($userdata);
 
-        return redirect('/');
+        \Session::flash('user_register_success','恭喜您,注册成功.请马上去邮箱激活🤗');
+
+        return back()->withInput();
     }
 
     public function confirmEmail($confirm_code)

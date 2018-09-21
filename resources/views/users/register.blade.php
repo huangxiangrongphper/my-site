@@ -10,6 +10,11 @@
                         @endforeach
                     </ul>
                 @endif
+                @if(Session::has('user_login_failed'))
+                    <div class="alert alert-danger" role="alert">
+                        {{ Session::get('user_login_failed') }}
+                    </div>
+                @endif
                 <form action="/user/register" method="POST" accept-charset="UTF-8">
                     {{ csrf_field() }}
                     <div class="form-group">
