@@ -187,14 +187,13 @@ class UsersController extends Controller
                 'password_confirmation' => 'required|min:6',
             ]);
             $email         = $request->get('email');
+            dd($email);
             $confirm_code  = Session::get('confirm_code','default');
 
             $user_info = User::where(function($query) use($email,$confirm_code) {
                 $query->where('email',$email)
                     ->where('confirm_code',$confirm_code);
             })->first();
-
-            dd($user_info);
 
             if(!$user_info){
                 \Session::flash('password_failed','没有找到对应的注册用户信息');
