@@ -65,22 +65,15 @@ class UsersController extends Controller
             'password' => 'required|min:6',
         ]);
 
-         $email     = $request->get('email');
-         $password  =  \Hash::make($request->get('password'));
-         dd($password );
-        $user = User::where(function($query) use($email,$password) {
-            $query->where('email',$email)
-                ->where('is_confirmed',1)
-                ->where('password',$password);
-        })->first();
-
-        if(!$user){
-            \Session::flash('user_login_failed','密码不正确或邮箱没验证');
-            return back()->withInput();
+        if(\Auth::attempt([
+            'email'        => $request->get('email'),
+            'password'     => $request->get('password'),
+            'is_confirmed' => 1
+        ])){
+            return redirect('/');
         }
-
-        return redirect('/');
-
+        \Session::flash('user_login_failed','密码不正确或邮箱没验证');
+        return redirect('/user/login')->withInput();
     }
 
     public function avatar()
