@@ -187,7 +187,6 @@ class UsersController extends Controller
                 'password_confirmation' => 'required|min:6',
             ]);
             $email         = $request->get('email');
-            dd($email);
             $confirm_code  = Session::get('confirm_code','default');
 
             $user_info = User::where(function($query) use($email,$confirm_code) {
