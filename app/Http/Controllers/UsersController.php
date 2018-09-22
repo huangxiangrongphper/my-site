@@ -74,7 +74,7 @@ class UsersController extends Controller
             'password'     => $request->get('password'),
             'is_confirmed' => 1
         ])){
-            flash('欢迎回来!'.Auth::user()->name,'success')->important();
+            flash('欢迎回来!😘😘  '.Auth::user()->name,'success')->important();
             return redirect('/about');
         }
         sleep(2);
