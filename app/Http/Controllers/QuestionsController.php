@@ -47,7 +47,15 @@ class QuestionsController extends Controller
             'body'  => 'required|min:26',
         ];
 
-        $this->validate($request,$rules);
+        $message = [
+            'title.required' => '标题不能为空',
+            'title.min' => '标题不能少于6个字符',
+            'title.max' => '标题最大长度不能超过196个字符',
+            'body.required' => '内容不能为空',
+            'body.min' => '内容不能少于26个字符',
+        ];
+
+        $this->validate($request,$rules,$message);
 
         $data = [
             'title'   => $request->get('title'),
