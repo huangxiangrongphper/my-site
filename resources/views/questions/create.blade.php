@@ -19,7 +19,7 @@
                                @endif
                            </div>
                            <div class="form-group">
-                               <select name="topics[]" class="js-example-basic-multiple js-data-example-ajax form-control" multiple="multiple">
+                               <select name="topics[]" class="js-example-placeholder-multiple js-data-example-ajax form-control" multiple="multiple">
                                </select>
                            </div>
                            <div class="form-group{{ $errors->has('body') ? 'has-error' : '' }}">
