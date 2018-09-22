@@ -74,7 +74,7 @@ class UsersController extends Controller
             'password'     => $request->get('password'),
             'is_confirmed' => 1
         ])){
-            return redirect('/');
+            return redirect('/about');
         }
         sleep(2);
         \Session::flash('user_login_failed','密码不正确或邮箱没验证🙃');
@@ -218,5 +218,10 @@ class UsersController extends Controller
             Session::put('confirm_code','default');
             return redirect('/');
         }
+    }
+
+    public function about()
+    {
+        return view('users.about');
     }
 }
