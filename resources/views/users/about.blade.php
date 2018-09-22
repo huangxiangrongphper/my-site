@@ -11,6 +11,11 @@
                 </div>
             </div>
         </div>
+        <div class="container">
+            @include('flash::message')
+        </div>
     </div>
-
+    <script>
+        $('#flash-overlay-modal').modal();
+    </script>
 @stop
