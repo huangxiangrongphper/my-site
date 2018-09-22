@@ -41,3 +41,21 @@ Route::get('/logout','UsersController@logout');
 Route::match(['get','post'],'password/email','UsersController@passwordReset')->name('passwordReset');
 
 Route::resource('comment','CommentsController');
+
+Route::get('/questions/home','QuestionsController@home');
+
+Route::resource('questions','QuestionsController',['name' => [
+    'create' => 'question.create'
+]]);
+
+
+
+
+
+
+
+
+
+
+
+
