@@ -5,6 +5,7 @@
     <title>hellohxr.cn</title>
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/font-awesome.css">
+    <link rel="stylesheet" href="/css/select2.min.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/jquery.Jcrop.css">
     <script src="/js/jquery-2.1.4.min.js"></script>
@@ -13,6 +14,7 @@
     <script src="/js/jquery.form.js"></script>
     <script src="https://lib.baomitu.com/vue/1.0.4/vue.min.js"></script>
     <script src="/js/vue-resource.min.js"></script>
+    <script src="/js/select2.min.js"></script>
     <meta id="token" name="token" value="{{ csrf_token() }}">
 </head>
 <body>
