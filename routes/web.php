@@ -42,8 +42,6 @@ Route::match(['get','post'],'password/email','UsersController@passwordReset')->n
 
 Route::resource('comment','CommentsController');
 
-Route::get('/questions/home','QuestionsController@home');
-
 Route::resource('questions','QuestionsController',['name' => [
     'create' => 'question.create'
 ]]);

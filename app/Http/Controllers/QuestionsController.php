@@ -7,11 +7,6 @@ use Illuminate\Http\Request;
 class QuestionsController extends Controller
 {
 
-    public function home()
-    {
-        return view('questions.create');
-    }
-
 
     public function index()
     {
@@ -25,7 +20,7 @@ class QuestionsController extends Controller
      */
     public function create()
     {
-        //
+        return view('questions.create');
     }
 
     /**
