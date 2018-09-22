@@ -52,3 +52,12 @@ $factory->define(App\Comment::class, function (Faker $faker) {
         'discussion_id' => $faker->randomElement($discussion_ids),
     ];
 });
+
+$factory->define(App\Topic::class, function (Faker $faker) {
+
+    return [
+        'name' => $faker->word,
+        'bio' => $faker->paragraph,
+        'questions_count' => 1
+    ];
+});
