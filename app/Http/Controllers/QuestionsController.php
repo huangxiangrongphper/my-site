@@ -35,7 +35,7 @@ class QuestionsController extends Controller
     {
         $data = [
             'title'   => $request->get('title'),
-            'title'   => $request->get('body'),
+            'body'   => $request->get('body'),
             'user_id' => Auth::id()
         ];
 
