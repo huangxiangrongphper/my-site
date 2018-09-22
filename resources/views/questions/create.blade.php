@@ -19,9 +19,7 @@
                                @endif
                            </div>
                            <div class="form-group">
-                               <select class="js-example-basic-multiple form-control" multiple="multiple">
-                                   <option value="AL">Alabama</option>
-                                   <option value="WY">Wyoming</option>
+                               <select name="topics[]" class="js-example-basic-multiple js-data-example-ajax form-control" multiple="multiple">
                                </select>
                            </div>
                            <div class="form-group{{ $errors->has('body') ? 'has-error' : '' }}">
