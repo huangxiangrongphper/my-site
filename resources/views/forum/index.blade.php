@@ -5,7 +5,7 @@
             <h2>欢迎来到 php技术讨论 社区
                 <a class="btn btn-danger btn-lg pull-right" href="/discussions/create" role="button">发布新的帖子 »</a>
                 &nbsp;&nbsp;&nbsp;&nbsp;
-                <a class="btn btn-danger btn-lg pull-right" href="/questions" role="button">发布新的问题 »</a>
+                <a class="btn btn-danger btn-lg pull-right" href="/questions/create" role="button">发布新的问题 »</a>
             </h2>
         </div>
     </div>
