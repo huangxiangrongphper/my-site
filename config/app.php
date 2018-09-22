@@ -162,6 +162,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         YuanChao\Editor\EndaEditorServiceProvider::class,
+        Overtrue\LaravelUEditor\UEditorServiceProvider::class,
 
 
     ],
