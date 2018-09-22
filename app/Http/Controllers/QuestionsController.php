@@ -10,6 +10,15 @@ class QuestionsController extends Controller
 {
 
 
+    /**
+     * QuestionsController constructor.
+     */
+    public function __construct()
+    {
+        $this->middleware('auth',['only'=>['create','store','edit','update']]);
+    }
+    
+
     public function index()
     {
         //
