@@ -56,12 +56,15 @@ class QuestionsController extends Controller
      */
     public function store(Request $request)
     {
-        $topics = $this->questionRepository->normalizeTopic($request->get('topics'));
+        if($request->get('topics')){
+
+          $topics = $this->questionRepository->normalizeTopic($request->get('topics'));
+          
+        }
 
         $rules = [
-            'title'   => 'required|min:6|max:196',
-            'body'    => 'required|min:26',
-            'topics'  => 'required'
+            'title' => 'required|min:6|max:196',
+            'body'  => 'required|min:26',
         ];
 
         $message = [
@@ -70,7 +73,6 @@ class QuestionsController extends Controller
             'title.max' => '标题最大长度不能超过196个字符',
             'body.required' => '内容不能为空',
             'body.min' => '内容不能少于26个字符',
-            'topics.required' => '请输入问题的话题种类'
         ];
 
         $this->validate($request,$rules,$message);
