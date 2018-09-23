@@ -7,7 +7,7 @@
                 <div class="media">
                     <div class="media-left">
                         <a href="">
-                            <img width="48" src="{{ $question->user->avatar }}" alt="{{ $question->user->name }}">
+                            <img src="{{ $question->user->avatar }}" alt="{{ $question->user->name }}" class="media-object img-circle" style="width: 64px;height: 64px">
                         </a>
                     </div>
                     <div class="media-body">
