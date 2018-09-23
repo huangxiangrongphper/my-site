@@ -64,15 +64,14 @@
                                 @if ($errors->has('body'))
                                 <span class="help-block">
                                     <strong>{{ $errors->first('body') }}</strong>
-                                    </span>
-                                        @endif
-                                    </div>
+                                </span>
+                                 @endif
+                             </div>
                                     <button class="btn btn-success pull-right" type="submit">提交答案</button>
                         </form>
                         @else
-                            <a href="/user/login" class="btn-success btn-block">登录提交答案</a>
+                           <div><a href="/user/login" class="btn-success btn-block">登录提交答案</a></div> 
                         @endif
-                        </div>
                     </div>
                 </div>
             </div>

@@ -35,6 +35,7 @@
                            </div>
                        <button class="btn btn-success pull-right" type="submit">发布问题</button>
                        </form>
+
                    </div>
                </div>
             </div>
