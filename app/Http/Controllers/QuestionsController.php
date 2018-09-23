@@ -44,7 +44,6 @@ class QuestionsController extends Controller
     public function store(Request $request)
     {
         $topics = $this->normalizeTopic($request->get('topics'));
-        dd($topics);
 
         $rules = [
             'title' => 'required|min:6|max:196',
@@ -68,6 +67,9 @@ class QuestionsController extends Controller
         ];
 
        $question = Question::create($data);
+
+       $question->topics()->attach($topics);
+
        return redirect()->route('question.show',[$question->id]);
     }
 
