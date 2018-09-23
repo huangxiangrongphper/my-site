@@ -107,7 +107,12 @@ class QuestionsController extends Controller
     public function edit($id)
     {
         $question = $this->questionRepository->byId($id);
-        return view('questions.edit',compact('question'));
+
+        if(Auth::user()->owns($question)){
+           return view('questions.edit',compact('question'));
+        }
+
+        return back();
     }
 
     /**
@@ -119,7 +124,33 @@ class QuestionsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $rules = [
+            'title' => 'required|min:6|max:196',
+            'body'  => 'required|min:26',
+        ];
+
+        $message = [
+            'title.required' => '标题不能为空',
+            'title.min' => '标题不能少于6个字符',
+            'title.max' => '标题最大长度不能超过196个字符',
+            'body.required' => '内容不能为空',
+            'body.min' => '内容不能少于26个字符',
+        ];
+
+        $this->validate($request,$rules,$message);
+
+        $question = $this->questionRepository->byId($id);
+        $topics = $this->questionRepository->normalizeTopic($request->get('topics'));
+
+        $question->update([
+            'title' => $request->get('title'),
+            'body' => $request->get('body'),
+        ]);
+
+        $question->topics()->sync($topics);
+
+        return redirect()->route('question.show',[$question->id]);
+
     }
 
     /**
