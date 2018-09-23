@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Question;
 use App\Repositories\QuestionRepository;
-use App\Topic;
 use Auth;
 use Illuminate\Http\Request;
 
@@ -57,7 +55,7 @@ class QuestionsController extends Controller
      */
     public function store(Request $request)
     {
-        $topics = $this->normalizeTopic($request->get('topics'));
+        $topics = $this->questionRepository->normalizeTopic($request->get('topics'));
 
         $rules = [
             'title' => 'required|min:6|max:196',
@@ -80,7 +78,7 @@ class QuestionsController extends Controller
             'user_id' => Auth::id()
         ];
 
-       $question = Question::create($data);
+       $question = $this->questionRepository->create($data);
 
        $question->topics()->attach($topics);
 
@@ -134,29 +132,5 @@ class QuestionsController extends Controller
         //
     }
 
-    /**
-     * @param array $topics
-     *
-     * @return array
-     */
-    private function normalizeTopic(array $topics)
-    {
-       return collect($topics)->map(function ($topic){
-           if(is_numeric($topic) && $topic_number = (int)$topic){
-               if( $newTopic = Topic::find($topic_number) ){
-                   $newTopic->increment('questions_count');
-                   return $topic_number;
-               }
-           }
 
-           if($newTopic = Topic::where('name',$topic)->first()){
-               $newTopic->increment('questions_count');
-               return $newTopic->id;
-           }
-
-           $newTopic = Topic::create(['name'=>$topic , 'questions_count'=>1]);
-           return $newTopic->id;
-       })->toArray();
-
-    }
 }
