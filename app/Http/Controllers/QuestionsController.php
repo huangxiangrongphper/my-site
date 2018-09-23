@@ -166,7 +166,7 @@ class QuestionsController extends Controller
 
         if(Auth::user()->owns($question)) {
             $question->delete();
-            return ('/');
+            return redirect('/');
         }
 
         abort(403,'Forbidden');// return back();
