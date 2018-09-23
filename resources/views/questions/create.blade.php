@@ -18,9 +18,14 @@
                                    </span>
                                @endif
                            </div>
-                           <div class="form-group">
+                           <div class="form-group{{ $errors->has('topics') ? 'has-error' : '' }}">
                                <select name="topics[]" class="js-example-placeholder-multiple js-data-example-ajax form-control" multiple="multiple">
                                </select>
+                               @if ($errors->has('topics'))
+                                   <span class="help-block">
+                                       <strong>{{ $errors->first('topics') }}</strong>
+                                   </span>
+                               @endif
                            </div>
                            <div class="form-group{{ $errors->has('body') ? 'has-error' : '' }}">
                                <label for="body">描述</label>
