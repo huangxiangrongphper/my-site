@@ -146,14 +146,20 @@ class QuestionsController extends Controller
         $this->validate($request,$rules,$message);
 
         $question = $this->questionRepository->byId($id);
-        $topics = $this->questionRepository->normalizeTopic($request->get('topics'));
+
+        if($request->get('topics'))
+        {
+            $topics = $this->questionRepository->normalizeTopic($request->get('topics'));
+            $question->topics()->sync($topics);
+        }
+      
 
         $question->update([
             'title' => $request->get('title'),
             'body' => $request->get('body'),
         ]);
 
-        $question->topics()->sync($topics);
+
 
         return redirect()->route('question.show',[$question->id]);
 
