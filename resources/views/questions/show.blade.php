@@ -6,7 +6,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         {{ $question->title }}
-                        @foreach( $question::with('topics') as $topic)
+                        @foreach( $question->topics as $topic)
                             <span class="topic">{{ $topic->name }}</span>
                         @endforeach
                     </div>
