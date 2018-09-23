@@ -3,23 +3,37 @@
 namespace App\Http\Controllers;
 
 use App\Question;
+use App\Repositories\QuestionRepository;
 use App\Topic;
 use Auth;
 use Illuminate\Http\Request;
 
+/**
+ * Class QuestionsController
+ *
+ * @package App\Http\Controllers
+ */
 class QuestionsController extends Controller
 {
 
+    /**
+     * @var \App\Repositories\QuestionRepository
+     */
+    protected $questionRepository;
 
     /**
      * QuestionsController constructor.
      */
-    public function __construct()
+    public function __construct(QuestionRepository $questionRepository)
     {
         $this->middleware('auth')->except(['index','show']);
+        $this->questionRepository = $questionRepository;
     }
 
 
+    /**
+     *
+     */
     public function index()
     {
         //
@@ -81,7 +95,7 @@ class QuestionsController extends Controller
      */
     public function show($id)
     {
-        $question = Question::with('topics')->where('id',$id)->first();
+        $question = $this->questionRepository->byIdWithTopics($id);
 
         return view('questions.show',compact('question'));
     }
@@ -120,6 +134,11 @@ class QuestionsController extends Controller
         //
     }
 
+    /**
+     * @param array $topics
+     *
+     * @return array
+     */
     private function normalizeTopic(array $topics)
     {
        return collect($topics)->map(function ($topic){
