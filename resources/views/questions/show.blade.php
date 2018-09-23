@@ -33,7 +33,7 @@
                     <div class="panel-heading">
                         {{ $question->answers_count }} 个答案
                     </div>
-                    <div class="panel-body">
+                    <div class="panel-body content">
 
                         @foreach($question->answers as $answers)
                             <div class="media">
