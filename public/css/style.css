@@ -107,7 +107,7 @@ a.topic:hover {
 }
 
 a.topic {
-    background-color: #eff6fa;
+    background: #eff6fa;
     padding: 1px 10px 0;
     border-radius: 30px;
     text-decoration: none;
@@ -115,7 +115,6 @@ a.topic {
     display: inline-block;
     white-space: normal;
     cursor: pointer;
-    float: right;
 }
 
 .user-statics , .user-actions {
