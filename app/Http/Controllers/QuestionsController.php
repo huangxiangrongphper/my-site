@@ -152,7 +152,7 @@ class QuestionsController extends Controller
             $topics = $this->questionRepository->normalizeTopic($request->get('topics'));
             $question->topics()->sync($topics);
         }
-      
+
 
         $question->update([
             'title' => $request->get('title'),
