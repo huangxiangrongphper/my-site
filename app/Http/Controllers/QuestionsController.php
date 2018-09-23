@@ -85,6 +85,7 @@ class QuestionsController extends Controller
 
        $question = $this->questionRepository->create($data);
 
+        $hasTopics = $topics?$topics:'';
        if($topics){
            $question->topics()->attach($topics);
        }
