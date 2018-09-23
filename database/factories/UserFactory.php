@@ -61,3 +61,12 @@ $factory->define(App\Topic::class, function (Faker $faker) {
         'questions_count' => 1
     ];
 });
+
+$factory->define(App\Question::class, function (Faker $faker) {
+    $user_ids = \App\User::pluck('id')->toArray();
+    return [
+        'title' => $faker->sentence,
+        'body' => $faker->paragraph,
+        'user_id' => $faker->randomElement($user_ids),
+    ];
+});
