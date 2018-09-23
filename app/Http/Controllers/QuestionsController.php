@@ -162,8 +162,13 @@ class QuestionsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $question = $this->questionRepository->byId($id);
+
+        if(Auth::user()->owns($question)) {
+            $question->delete();
+            return ('/');
+        }
+
+        abort(403,'Forbidden');// return back();
     }
-
-
 }

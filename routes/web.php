@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/','PostsController@index');
+Route::get('/','QuestionController@index');
 
 Route::post('/deploy','DeploymentController@deploy');
 
