@@ -106,7 +106,8 @@ class QuestionsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $question = $this->questionRepository->byId($id);
+        return view('questions.edit',compact('question'));
     }
 
     /**
