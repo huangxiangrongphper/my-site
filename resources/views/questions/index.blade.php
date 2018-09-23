@@ -25,7 +25,7 @@
                             <div class="media-conversation-meta">
                         <span class="media-conversation-replies">
                             <a href="/discussion/154#reply"></a>
-                            回复
+                            {{ $question->answers_count }}回复
                         </span>
                             </div>
                         </h4>
