@@ -22,12 +22,12 @@
                     <div class="media-body">
                         <h4 class="media-heading">
                             <a href="/discussions/show/{{ $discussion->id }}">{{ $discussion->title }}</a>
-                    <div class="media-conversation-meta">
+                      <div class="media-conversation-meta">
                         <span class="media-conversation-replies">
                             <a href="/discussion/154#reply">{{ count($discussion->comments) }}</a>
                             回复
                         </span>
-                    </div>
+                       </div>
                         </h4>
                         {{ $discussion->user->name }}
                     </div>
