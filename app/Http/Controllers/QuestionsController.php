@@ -141,6 +141,7 @@ class QuestionsController extends Controller
         $this->validate($request,$rules,$message);
 
         $question = $this->questionRepository->byId($id);
+        dd($request->get('topics'));
         $topics = $this->questionRepository->normalizeTopic($request->get('topics'));
 
         $question->update([
