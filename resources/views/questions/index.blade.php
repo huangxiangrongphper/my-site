@@ -9,12 +9,12 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2" >
+            <div class="col-md-9" role="main">
             @foreach($questions as $question)
                 <div class="media">
                     <div class="media-left">
                         <a href="">
-                            <img src="{{ $question->user->avatar }}" alt="{{ $question->user->name }}" class="media-object img-circle" style="width: 64px;height: 64px">
+                            <img src="{{ $question->user->avatar }}" alt="64x64" class="media-object img-circle" style="width: 64px;height: 64px">
                         </a>
                     </div>
                     <div class="media-body">
