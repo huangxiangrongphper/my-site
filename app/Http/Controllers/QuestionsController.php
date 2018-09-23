@@ -44,6 +44,8 @@ class QuestionsController extends Controller
     {
         dd($request->get('topics'));
         $topics = $this->normalizeTopic($request->get('topics'));
+        dd($topics);
+
         $rules = [
             'title' => 'required|min:6|max:196',
             'body'  => 'required|min:26',
@@ -114,5 +116,26 @@ class QuestionsController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    private function normalizeTopic(array $topics)
+    {
+       return collect($topics)->map(function ($topic){
+           if(is_numeric($topic) && $topic_number = (int)$topic){
+               if( $newTopic = Topic::find($topic_number) ){
+                   $newTopic->increment('questions_count');
+                   return $topic_number;
+               }
+           }
+
+           if($newTopic = Topic::where('name',$topic)->first()){
+               $newTopic->increment('questions_count');
+               return $newTopic->id;
+           }
+
+           $newTopic = Topic::create(['name'=>$topic , 'questions_count'=>1]);
+           return $newTopic->id;
+       })->toArray();
+
     }
 }
