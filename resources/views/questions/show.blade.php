@@ -53,7 +53,7 @@
                             </div>
                         @endforeach
 
-
+                        @if(Auth::check())
                         <form action="/questions/{{$question->id}}/answer" method="post">
                             {!! csrf_field() !!}
 
@@ -68,7 +68,10 @@
                                         @endif
                                     </div>
                                     <button class="btn btn-success pull-right" type="submit">提交答案</button>
-                                    </form>
+                        </form>
+                        @else
+                            <a href="/user/login" class="btn-success btn-block">登录提交答案</a>
+                        @endif
                     </div>
                 </div>
             </div>
