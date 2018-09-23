@@ -115,7 +115,7 @@ a.topic {
     display: inline-block;
     white-space: nowrap;
     cursor: pointer;
-    text-align: right;
+    float: right;
 }
 
 .user-statics , .user-actions {
