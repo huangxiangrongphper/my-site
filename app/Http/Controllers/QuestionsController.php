@@ -81,7 +81,7 @@ class QuestionsController extends Controller
      */
     public function show($id)
     {
-        $question = Question::find($id);
+        $question = Question::with('topics')->where('id',$id)->first();
 
         return view('questions.show',compact('question'));
     }
