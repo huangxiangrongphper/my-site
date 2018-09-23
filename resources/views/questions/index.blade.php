@@ -24,6 +24,15 @@
                             </a>
                         </h4>
                     </div>
+                    <div class="media-conversation-meta">
+                        <span class="media-conversation-replies">
+                            <a href="/discussion/154#reply"></a>
+                            回复
+                        </span>
+                    </div>
+                    </h4>
+                    {{ $question->user->name }}
+                </div>
                 </div>
             @endforeach
             </div>
