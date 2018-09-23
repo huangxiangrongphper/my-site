@@ -28,51 +28,49 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-8 col-md-offset-1">
+            <div class="col-md-8 col-md-offset-2" >
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         {{ $question->answers_count }} 个答案
                     </div>
-                    <div class="panel-body">
-                        @foreach($question->answers as $answer)
+                    <div class="panel-body content">
+
+                        @foreach($question->answers as $answers)
                             <div class="media">
                                 <div class="media-left">
-                                    <user-vote-button answer="{{$answer->id}}" count="{{$answer->votes_count}}"></user-vote-button>
+                                    <a href="">
+                                        <img src="{{ $question->user->avatar }}" alt="64x64" class="media-object img-circle" style="width: 36px;height: 36px">
+                                    </a>
                                 </div>
-                                <div class="media-body">
+                                <div class="media-body" >
                                     <h4 class="media-heading">
-                                        <a href="/user/{{ $answer->user->name }}">
-                                            {{ $answer->user->name }}
+                                        <a href="/user/{{ $answers->user->name }}">
+                                            {{ $answers->user->name }}
                                         </a>
                                     </h4>
-                                    {!! $answer->body !!}
+                                    {!! $answers->body !!}
                                 </div>
-                                <comments type="answer"
-                                          model="{{$answer->id}}"
-                                          count="{{$answer->comments()->count()}}">
-
-                                </comments>
                             </div>
                         @endforeach
-                        @if(Auth::check())
-                            <form action="/questions/{{$question->id}}/answer" method="post">
-                                {!! csrf_field() !!}
-                                <div class="form-group{{ $errors->has('body') ? ' has-error' : '' }}">
-                                    <script id="container" name="body" style="height: 120px;" type="text/plain">
-                                        {!! old('body') !!}
-                                    </script>
-                                    @if ($errors->has('body'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('body') }}</strong>
-                                        </span>
-                                            @endif
-                                        </div>
-                                        <button class="btn btn-success pull-right" type="submit">提交答案</button>
-                                        </form>
-                                            @else
-                                        <a href="{{ url('login') }}" class="btn btn-success btn-block">登录提交答案</a>
-                                            @endif
-                                        </div>
+
+                            @if(Auth::check())
+                                <form action="/questions/{{$question->id}}/answer" method="post">
+                                    {!! csrf_field() !!}
+                                    <div class="form-group{{ $errors->has('body') ? ' has-error' : '' }}">
+                                        <script id="container" name="body" style="height: 120px;" type="text/plain">
+                                            {!! old('body') !!}
+                                        </script>
+                                        @if ($errors->has('body'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('body') }}</strong>
+                                            </span>
+                                                @endif
+                                            </div>
+                                            <button class="btn btn-success pull-right" type="submit">提交答案</button>
+                                            </form>
+                                                @else
+                                            <a href="{{ url('login') }}" class="btn btn-success btn-block">登录提交答案</a>
+                                                @endif
                     </div>
                 </div>
             </div>
