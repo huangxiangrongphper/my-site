@@ -9,7 +9,7 @@
                         {{ $question->title }}
                         @if($question->topics)
                         @foreach( $question->topics as $topic)
-                            <a class="topic" href="/topic/{{ $topic->id }}">{{ $topic->name }}</a>
+                            <a class="topic" href="">{{ $topic->name }}</a>
                         @endforeach
                         @endif
                     </div>
