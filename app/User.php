@@ -26,6 +26,12 @@ class User extends Authenticatable
      *
      * @var array
      */
+    public function answers()
+    {
+        return $this->hasMany(Answer::class);
+    }
+
+
     public function owns(Model $model)
     {
         return $this->id == $model->user_id;
