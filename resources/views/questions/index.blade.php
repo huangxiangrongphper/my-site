@@ -1,5 +1,12 @@
 @extends('app')
 @section('content')
+    <div class="jumbotron">
+        <div class="container">
+            <h2>欢迎来到 php技术讨论 社区
+                <a class="btn btn-danger btn-lg pull-right" href="/questions/create" role="button">发布新的问题 »</a>
+            </h2>
+        </div>
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2" >
