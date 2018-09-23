@@ -69,7 +69,7 @@
                                             <button class="btn btn-success pull-right" type="submit">提交答案</button>
                                             </form>
                                                 @else
-                                            <a href="{{ url('login') }}" class="btn btn-success btn-block">登录提交答案</a>
+                                            <a href="{{ url('user/login') }}" class="btn btn-success btn-block">登录提交答案</a>
                                                 @endif
                     </div>
                 </div>
