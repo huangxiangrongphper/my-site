@@ -6,9 +6,11 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         {{ $question->title }}
+                        @if($question->topics)
                         @foreach( $question->topics as $topic)
                             <a class="topic" href="/topic/{{ $topic->id }}">{{ $topic->name }}</a>
                         @endforeach
+                        @endif
                     </div>
                     <div class="panel-body">
                         {!! $question->body !!}

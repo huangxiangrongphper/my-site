@@ -59,7 +59,7 @@ class QuestionsController extends Controller
         if($request->get('topics')){
 
           $topics = $this->questionRepository->normalizeTopic($request->get('topics'));
-          
+
         }
 
         $rules = [
@@ -85,7 +85,9 @@ class QuestionsController extends Controller
 
        $question = $this->questionRepository->create($data);
 
-       $question->topics()->attach($topics);
+       if($topics){
+           $question->topics()->attach($topics);
+       }
 
        return redirect()->route('question.show',[$question->id]);
     }
