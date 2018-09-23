@@ -34,6 +34,27 @@
                         {{ $question->answers_count }} 个答案
                     </div>
                     <div class="panel-body">
+
+                        @foreach($question->answers as $answers)
+                            <div class="media">
+                                <div class="media-left">
+                                    <a href="">
+                                        <img src="{{ $question->user->avatar }}" alt="64x64" class="media-object img-circle" style="width: 36px;height: 36px">
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">
+                                        <a href="/user/{{ $answers->user->name }}">
+                                            {{ $answers->user->name }}
+                                        </a>
+                                    </h4>
+                                    {!! $answers->body !!}
+                                    </h4>
+                                </div>
+                            </div>
+                        @endforeach
+
+
                         <form action="/questions/{{$question->id}}/answer" method="post">
                             {!! csrf_field() !!}
 

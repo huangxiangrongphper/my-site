@@ -17,9 +17,9 @@ class QuestionRepository
      *
      * @return \App\Question|\Illuminate\Database\Eloquent\Builder|\Illuminate\Database\Eloquent\Model|null|object
      */
-    public function byIdWithTopics($id)
+    public function byIdWithTopicsAndAnswers($id)
     {
-       return Question::with('topics')->where('id',$id)->first();
+       return Question::with(['topics','answers'])->where('id',$id)->first();
     }
 
     public function create(array $attributes)
