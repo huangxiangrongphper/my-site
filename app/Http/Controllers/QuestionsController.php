@@ -56,11 +56,6 @@ class QuestionsController extends Controller
      */
     public function store(Request $request)
     {
-        if($request->get('topics')){
-
-          $topics = $this->questionRepository->normalizeTopic($request->get('topics'));
-
-        }
 
         $rules = [
             'title' => 'required|min:6|max:196',
@@ -85,10 +80,12 @@ class QuestionsController extends Controller
 
        $question = $this->questionRepository->create($data);
 
-        $hasTopics = $topics?$topics:'';
-       if($topics){
-           $question->topics()->attach($topics);
-       }
+        if($request->get('topics')){
+
+            $topics = $this->questionRepository->normalizeTopic($request->get('topics'));
+
+            $question->topics()->attach($topics);
+        }
 
        return redirect()->route('question.show',[$question->id]);
     }
