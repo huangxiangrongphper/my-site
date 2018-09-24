@@ -30,7 +30,8 @@ class UsersController extends Controller
         $data = [
             'confirm_code'=>str_random(48),
             'avatar'=>'/images/default-avatar.png',
-            'password' => bcrypt($request->get('password'))
+            'password' => bcrypt($request->get('password')),
+            'api_token' => str_random(60),
         ];
 
         $userdata = array_merge($user,$data);

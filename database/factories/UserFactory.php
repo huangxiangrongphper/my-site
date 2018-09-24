@@ -26,11 +26,13 @@ $factory->define(App\User::class, function (Faker $faker) {
 
 $factory->define(App\Discussion::class, function (Faker $faker) {
     $user_ids = \App\User::pluck('id')->toArray();
+    $api_token = str_random(60);
     return [
         'title' => $faker->sentence,
         'body' => $faker->paragraph,
         'user_id' => $faker->randomElement($user_ids),
         'last_user_id' => $faker->randomElement($user_ids),
+        'api_token' => $faker->randomElement($api_token),
     ];
 });
 
