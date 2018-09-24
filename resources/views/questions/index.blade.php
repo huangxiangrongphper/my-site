@@ -25,7 +25,7 @@
                             <div class="media-conversation-meta">
                                 <span class="media-conversation-replies">
                                     {{ $question->answers_count }}回复
-                                    {{ $question->followers_count }} 关注者
+                                    &nbsp;&nbsp;&nbsp;&nbsp;{{ $question->followers_count }}关注者
                                 </span>
                             </div>
                         </h4>
