@@ -34,7 +34,7 @@
                         <h2>{{ $question->followers_count }}</h2>
                         <span>关注者</span>
                     </div>
-                    <div class="panel-body">
+                    <div class="panel-body" id="app">
                         @if(Auth::check())
 {{--                        <a href="/question/{{$question->id}}/follow" class=" btn btn-default {{ Auth::user()->followed($question->id) ? 'btn-success' : '' }}">
                             {{ Auth::user()->followed($question->id) ? '已关注' : '关注该问题' }}
@@ -114,5 +114,4 @@
             ue.execCommand('serverparam', '_token', '{{ csrf_token() }}'); // 设置 CSRF token.
         });
     </script>
-<script src="/js/app.js"></script>
 @stop
