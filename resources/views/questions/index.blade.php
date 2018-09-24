@@ -24,8 +24,12 @@
                             </a>
                             <div class="media-conversation-meta">
                         <span class="media-conversation-replies">
-                            <a href="/discussion/154#reply"></a>
+                            <a href="/answers/154#reply"></a>
                             {{ $question->answers_count }}回复
+                        </span>
+                        <span class="media-conversation-replies">
+                            <a href="/question/154#reply"></a>
+                           {{ $question->followers_count }} 关注者
                         </span>
                             </div>
                         </h4>
