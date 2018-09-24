@@ -14,6 +14,7 @@
     <script src="/js/jquery.form.js"></script>
     <script src="/js/select2.min.js"></script>
     <script src="/js/app.js"></script>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta id="token" name="token" value="{{ csrf_token() }}">
 </head>
 <body>
