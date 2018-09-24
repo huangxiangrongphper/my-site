@@ -41,7 +41,7 @@ Route::post('/question/follow',function (Request $request){
         ->first();
     if($followed !== null) {
         $followed->delete();
-        return request()->json(['followed' => false ]);
+        return response()->json(['followed' => false ]);
     }
     \App\Follow::create([
         'question_id' =>$request->get('question'),
