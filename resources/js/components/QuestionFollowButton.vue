@@ -28,7 +28,8 @@
         methods:{
             follow() {
                 axios.post('/api/question/follow',{'question':this.question,'user':this.user}).then(response => {
-                    this.followed = response.data.followed
+                    console.log(response.data);
+                    //this.followed = response.data.followed
                 })
             }
         }

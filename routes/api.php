@@ -36,6 +36,7 @@ Route::post('/question/follower',function (Request $request){
 })->middleware('auth:api');
 
 Route::post('/question/follow',function (Request $request){
+    return Auth::guard('api')->user();
     $followed = \App\Follow::where('question_id',$request->get('question'))
         ->where('user_id',$request->get('user'))
         ->first();
