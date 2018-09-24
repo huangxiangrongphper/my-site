@@ -9,7 +9,7 @@
     export default {
         props:['question','user'],
         mounted() {
-            axios.post('/api/question/follower',{}).then(response => {
+            axios.post('/api/question/follower',{'question':this.question,'user':this.user}).then(response => {
                 console.log(response.data);
             })
         },
