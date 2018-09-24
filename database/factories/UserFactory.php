@@ -26,7 +26,11 @@ $factory->define(App\User::class, function (Faker $faker) {
 
 $factory->define(App\Discussion::class, function (Faker $faker) {
     $user_ids = \App\User::pluck('id')->toArray();
-    $api_token = $api[] = str_random(60);
+    $api = [];
+    for ($i=1;$i<=70;$i++){
+        $api[] = str_random(70);
+    }
+    $api_token = $api;
     return [
         'title' => $faker->sentence,
         'body' => $faker->paragraph,
