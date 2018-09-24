@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="csrf-token" content="{{csrf_token}}">
     <title>hellohxr.cn</title>
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/font-awesome.css">
@@ -14,6 +13,7 @@
     <script src="/js/jquery.form.js"></script>
     <script src="/js/select2.min.js"></script>
     <script src="/js/app.js"></script>
+    <meta name="csrf-token" content="{{csrf_token}}">
 </head>
 <body>
 <nav class="navbar navbar-default navbar-static-top">
