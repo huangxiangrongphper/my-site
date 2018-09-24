@@ -25,7 +25,14 @@ Route::get('/topics', function (Request $request){
 })->middleware('api');
 
 Route::post('/question/follower',function (Request $request){
-    return response()->json(['question' => request('question')]);
+    $followed = \App\Follow::where('question_id',$request->get('question'))
+                ->where('user_id',$request->get('user'))
+                ->count();
+    if($followed) {
+        return request()->json(['followed' => true ]);
+    }
+    return response()->json(['followed' => false ]);
+
 })->middleware('api');
 
 
