@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="/css/jquery.Jcrop.css">
     <script src="/js/jquery-2.1.4.min.js"></script>
     <script src="/js/jquery.Jcrop.min.js"></script>
-    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.js"></script>
     <script src="/js/jquery.form.js"></script>
     <script src="/js/select2.min.js"></script>
     <script src="/js/app.js"></script>
