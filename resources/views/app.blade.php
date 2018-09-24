@@ -15,7 +15,6 @@
     <script src="/js/select2.min.js"></script>
     <script src="/js/app.js"></script>
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta id="token" name="token" value="{{ csrf_token() }}">
 </head>
 <body>
 <nav class="navbar navbar-default navbar-static-top">
