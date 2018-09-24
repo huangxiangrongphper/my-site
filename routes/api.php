@@ -35,6 +35,22 @@ Route::post('/question/follower',function (Request $request){
 
 })->middleware('api');
 
+Route::post('/question/follow',function (Request $request){
+    $followed = \App\Follow::where('question_id',$request->get('question'))
+        ->where('user_id',$request->get('user'))
+        ->first();
+    if($followed !== null) {
+        $followed->delete();
+        return request()->json(['followed' => false ]);
+    }
+    \App\Follow::create([
+        'question_id' =>$request->get('question'),
+        'user_id' =>$request->get('user'),
+    ]);
+    return response()->json(['followed' => true ]);
+
+})->middleware('api');
+
 
 
 
