@@ -26,10 +26,30 @@ $factory->define(App\User::class, function (Faker $faker) {
 
 $factory->define(App\Discussion::class, function (Faker $faker) {
     $user_ids = \App\User::pluck('id')->toArray();
-    $api = [];
-    for ($i=1;$i<=70;$i++){
-        $api[] = str_random(70);
-    }
+    $api = [
+        'sEWA5Nsm15E6Ym8HHOxe7Te9FKm6Al9mma8bZRIGZJaAJwYtg0LeF7qhz0O7',
+        'sEWA5Nsm15E6Ym8HHOxe7Te9FKm6Al9mma8bZRIGZJaAJwYtg0LeF7qhz0Os',
+        'sEWA5Nsm15E6Ym8HHOxw7Te9FKm6Al9mma8bZRIGZJaAJwYtg0LeF7qhz0Os',
+        'sEWA5Nsm15E6Ym8HHOxe7Te9FKm6Al9mma8bZRIGZJaAJwYtg0LeF7qhz0Os',
+        'sEWA5Nsm15E6Ym8HHOxe7Te9FKm6Al9mma8bZRIGZJaAJwYtg0LeF7qhz0Os',
+        'sEWA5Nsm15E6Ym8HHOxe7Te9FKm6Al9mma8b6RIGZJaAJwYtg0LeF7qhz0Os',
+        'sEWA5Nsm15E6Ym8HHOxe7Te9FKm6Al9mma8bZRIGZJaAJwYtg0LeF7qhz0Os',
+        'sEWA5Nsm15E6Ym8HHOxe7Te9FKm6Al9mma8bZRIGZJaAJwYtg0LeF7qhz0Os',
+        'sEWA5Nsm15E6Ym8HHOxe7Te9FKm6Al9mma8bZRIGZJaAJwYtg0LeF7qhz0Os',
+        'sEWA5Nsm15E6Ym7HHOxe7Te9FKm6Al9mma8bZRIGZJaAJwYtg0LeF7qhz0Os',
+        'sEWA5Nsm15E6Ym8HHOxe7Te9FKm6Al9mma8bZRIGZJaAJwYtg0LeF7qhz0Os',
+        'sEWA5Nsm15E6Ym8HHOxe7Te9FKm6Al9mma8bZsIGZJaAJwYtg0LeF7qhz0Os',
+        'sEWA5Nsm15E6Ym8dHOxe7Te9FKm6Al9mma8bZRIGZJaAJwYtg0LeF7qhz0Os',
+        'sEWA5Nsm15E6Ym8HHOxe7Te9FKm6Al9mma8bZRIGZJSAJwYtg0LeF7qhz0Os',
+        'sEWA5Nsm15E6Ym8HHOxe7Te9FKm6Al9mma8bZRIGZJSAJwYtg0LeF7qhz5Os',
+        'sEWA5Nsm15E6Ym8HHOxe7Te9FKm6Al9mma8bZRIGZJSAJwYtg0LeF7q3z0Os',
+        'sEWA5Nsm15E6Ym8HHOxe7Te9FKm6Al9dma8bZRIGZJSAJwYtg0LeF7q3z0Os',
+        'sEWA5Nsm15E6Ym8HHOxe7Te9rKm6Al9mma8bZRIGZJSAJwYtg0LeF7q3z0Os',
+        'sEWA5Nsm15E6Ym8HHOxe7Te9FKm6Al9mma8bZRIGZJSAJwYth0LeF7q3z0Os',
+        'sEWA5Nsm15E6bm8HHOxe7Te9FKm6Al9mma8bZRIGZJSAJwYtg0LeF7q3z0Os',
+        
+    ];
+
     $api_token = $api;
     return [
         'title' => $faker->sentence,
