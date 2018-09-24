@@ -114,4 +114,5 @@
             ue.execCommand('serverparam', '_token', '{{ csrf_token() }}'); // 设置 CSRF token.
         });
     </script>
+<script src="/js/app.js"></script>
 @stop

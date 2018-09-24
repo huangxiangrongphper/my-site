@@ -55,6 +55,5 @@
 @yield('content')
 @yield('js')
 @include('footer')
-<script src="/js/app.js"></script>
 </body>
 </html>
