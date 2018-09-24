@@ -47,7 +47,6 @@ $factory->define(App\Discussion::class, function (Faker $faker) {
         'sEWA5Nsm15E6Ym8HHOxe7Te9rKm6Al9mma8bZRIGZJSAJwYtg0LeF7q3z0Os',
         'sEWA5Nsm15E6Ym8HHOxe7Te9FKm6Al9mma8bZRIGZJSAJwYth0LeF7q3z0Os',
         'sEWA5Nsm15E6bm8HHOxe7Te9FKm6Al9mma8bZRIGZJSAJwYtg0LeF7q3z0Os',
-        
     ];
 
     $api_token = $api;
