@@ -26,9 +26,8 @@ Route::get('/topics', function (Request $request){
 
 Route::post('/question/follower',function (Request $request){
     $user = Auth::guard('api')->user();
-    $followed = $user->followed($request->get('question'));
-    if($followed) {
-        return request()->json(['followed' => true ]);
+    if($user->followed($request->get('question'))){
+        return response()->json(['followed' => true ]);
     }
     return response()->json(['followed' => false ]);
 
