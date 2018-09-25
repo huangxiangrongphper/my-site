@@ -36,9 +36,6 @@
                     </div>
                     <div class="panel-body" id="app">
                         @if(Auth::check())
-{{--                        <a href="/question/{{$question->id}}/follow" class=" btn btn-default {{ Auth::user()->followed($question->id) ? 'btn-success' : '' }}">
-                            {{ Auth::user()->followed($question->id) ? '已关注' : '关注该问题' }}
-                        </a>--}}
                         <question-follow-button question="{{$question->id}}"></question-follow-button>
                         @else
                             <a href="{{url('user/login')}}" class="btn btn-default">关注该问题</a>
@@ -93,7 +90,31 @@
                     </div>
                 </div>
             </div>
-
+            <div class="col-md-3">
+            <div class="panel panel-default">
+            <div class="panel-heading question-follow">
+            <h2>关于作者</h2>
+            </div>
+            <div class="panel-body">
+                <div class="media">
+                    <div class="media-left">
+                        <a href="#">
+                            <img width="36" src="{{$question->user->avatar}}" alt="{{$question->user->name}}">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">
+                            <a href="">
+                               {{$question->user->name}}
+                            </a>
+                        </h4>
+                    </div>
+                </div>
+            <question-follow-button question="{{$question->id}}"></question-follow-button>
+            <a href="#editor" class="btn btn-primary pull-right">撰写答案</a>
+            </div>
+            </div>
+            </div>
         </div>
     </div>
 
