@@ -20,7 +20,7 @@ class FollowersController extends Controller
     {
         $user = $this->user->byId($id);
 
-        $followers = $user->followers()->pluck('follower_id')->toArray();
+        $followers = $user->followersUser()->pluck('follower_id')->toArray();
 
         if(in_array(Auth::guard('api')->user()->id,$followers))
         {
