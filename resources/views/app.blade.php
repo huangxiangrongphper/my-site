@@ -54,8 +54,8 @@
     </div>
 </nav>
 @yield('content')
-@yield('js')
 <script src="/js/app.js"></script>
+@yield('js')
 @include('footer')
 </body>
 </html>
