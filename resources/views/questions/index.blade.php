@@ -1,6 +1,6 @@
 @extends('app')
 @section('content')
-    <div class="jumbotron">
+    <div class="jumbotron" id="app">
         <div class="container">
             <h2>欢迎来到 PHP技术问答 社区🖖
                 <a class="btn btn-danger btn-lg pull-right" href="/questions/create" role="button">发布新的问题 »</a>
