@@ -45,76 +45,76 @@
                 </div>
             </div>
             <div class="col-md-8 col-md-offset-1" >
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        {{ $question->answers_count }} 个答案
-                    </div>
-                    <div class="panel-body content">
+               <div class="panel panel-default">
+                <div class="panel-heading">
+                    {{ $question->answers_count }} 个答案
+                </div>
+                <div class="panel-body content">
 
-                        @foreach($question->answers as $answers)
-                            <div class="media">
-                                <div class="media-left">
-                                    <a href="">
-                                        <img src="{{ $question->user->avatar }}" alt="64x64" class="media-object img-circle" style="width: 36px;height: 36px">
-                                    </a>
-                                </div>
-                                <div class="media-body" >
-                                    <h4 class="media-heading">
-                                        <a href="/user/{{ $answers->user->name }}">
-                                            {{ $answers->user->name }}
-                                        </a>
-                                    </h4>
-                                    {!! $answers->body !!}
-                                </div>
+                    @foreach($question->answers as $answers)
+                        <div class="media">
+                            <div class="media-left">
+                                <a href="">
+                                    <img src="{{ $question->user->avatar }}" alt="64x64" class="media-object img-circle" style="width: 36px;height: 36px">
+                                </a>
                             </div>
-                        @endforeach
-
-                            @if(Auth::check())
-                                <form action="/questions/{{$question->id}}/answer" method="post">
-                                    {!! csrf_field() !!}
-                                    <div class="form-group{{ $errors->has('body') ? ' has-error' : '' }}">
-                                        <script id="container" name="body" style="height: 120px;" type="text/plain">
-                                            {!! old('body') !!}
-                                        </script>
-                                        @if ($errors->has('body'))
-                                        <span class="help-block">
-                                            <strong>{{ $errors->first('body') }}</strong>
-                                            </span>
-                                                @endif
-                                            </div>
-                                            <button class="btn btn-success pull-right" type="submit">提交答案</button>
-                                            </form>
-                                                @else
-                                            <a href="{{ url('user/login') }}" class="btn btn-success btn-block">登录提交答案</a>
-                                                @endif
+                            <div class="media-body" >
+                                <h4 class="media-heading">
+                                    <a href="/user/{{ $answers->user->name }}">
+                                        {{ $answers->user->name }}
+                                    </a>
+                                </h4>
+                                {!! $answers->body !!}
+                            </div>
+                        </div>
+                    @endforeach
+                        @if(Auth::check())
+                        <form action="/questions/{{$question->id}}/answer" method="post">
+                            {!! csrf_field() !!}
+                            <div class="form-group{{ $errors->has('body') ? ' has-error' : '' }}">
+                                <script id="container" name="body" style="height: 120px;" type="text/plain">
+                                    {!! old('body') !!}
+                                </script>
+                                @if ($errors->has('body'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('body') }}</strong>
+                                    </span>
+                                        @endif
+                            </div>
+                                    <button class="btn btn-success pull-right" type="submit">提交答案</button>
+                                    </form>
+                        @else
+                           <a href="{{ url('user/login') }}" class="btn btn-success btn-block">登录提交答案</a>
+                        @endif
                     </div>
                 </div>
-            </div>
-            <div class="col-md-3">
-            <div class="panel panel-default">
-            <div class="panel-heading question-follow">
-            <h2>关于作者</h2>
-            </div>
-            <div class="panel-body">
+                <div class="col-md-3">
+                <div class="panel panel-default">
+                <div class="panel-heading question-follow">
+                <h2>关于作者</h2>
+                </div>
+                <div class="panel-body">
                 <div class="media">
-                    <div class="media-left">
-                        <a href="#">
-                            <img width="36" src="{{$question->user->avatar}}" alt="{{$question->user->name}}">
-                        </a>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading">
-                            <a href="">
-                               {{$question->user->name}}
-                            </a>
-                        </h4>
-                    </div>
+                <div class="media-left">
+                <a href="#">
+                <img width="36" src="{{$question->user->avatar}}" alt="{{$question->user->name}}">
+                </a>
                 </div>
-            <question-follow-button question="{{$question->id}}"></question-follow-button>
-            <a href="#editor" class="btn btn-primary pull-right">撰写答案</a>
+                <div class="media-body">
+                <h4 class="media-heading">
+                <a href="">
+                    {{$question->user->name}}
+                </a>
+                </h4>
+                </div>
+                </div>
+                <question-follow-button question="{{$question->id}}"></question-follow-button>
+                <a href="#editor" class="btn btn-primary pull-right">撰写答案</a>
+                </div>
+                </div>
+                </div>
             </div>
-            </div>
-            </div>
+
         </div>
     </div>
 
