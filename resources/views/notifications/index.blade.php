@@ -7,7 +7,7 @@
                     <div class="panel-heading">消息通知</div>
                     <div class="panel-body">
                         @foreach($user->notifications as $notification)
-                            {{ snake_case(class_basename($notification->type))  }}
+                            @include('notifications.'.snake_case(class_basename($notification->type)))
                         @endforeach
                     </div>
                 </div>
