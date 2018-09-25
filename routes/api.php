@@ -48,6 +48,8 @@ Route::post('/question/follow',function (Request $request){
 
 })->middleware('auth:api');
 
+Route::get('/user/followers','FollowersController@index');
+Route::post('/user/follow','FollowersController@follow');
 
 
 
