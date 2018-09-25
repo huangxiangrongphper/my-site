@@ -60,7 +60,7 @@
                <div class="panel panel-default">
                    <div class="panel-heading">发布问题</div>
                    <div class="panel-body">
-                       <div action="/questions" method="post">
+                       <form action="/questions" method="post">
                            {!! csrf_field() !!}
                            <div class="form-group{{ $errors->has('title') ? 'has-error' : '' }}">
                                <label for="title">标题</label>
