@@ -31,7 +31,7 @@
             <div class="col-md-3">
                 <div class="panel panel-default">
                     <div class="panel-heading question-follow">
-                        <h2>关于作者</h2>
+                        <h5>关于作者</h5>
                     </div>
                     <div class="panel-body">
                         <div class="media">
@@ -46,6 +46,20 @@
                                         {{$question->user->name}}
                                     </a>
                                 </h4>
+                            </div>
+                            <div class="user-statics">
+                                <div class="statics-item text-center">
+                                    <div class="statics-text">问题</div>
+                                    <div class="statics-count"> {{$question->user->questions_count}} </div>
+                                </div>
+                                <div class="statics-item text-center">
+                                    <div class="statics-text">回答</div>
+                                    <div class="statics-count"> {{ $question->user->answers_count }} </div>
+                                </div>
+                                <div class="statics-item text-center">
+                                    <div class="statics-text">关注着</div>
+                                    <div class="statics-count"> {{ $question->user->followers_count }} </div>
+                                </div>
                             </div>
                         </div>
                         <question-follow-button question="{{$question->id}}"></question-follow-button>
