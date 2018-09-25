@@ -59,7 +59,7 @@ class User extends Authenticatable
 
     public function followThisUser($user)
     {
-        return $this->follows()->toggle($user);
+        return $this->followers()->toggle($user);
     }
 
     
