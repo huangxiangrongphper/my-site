@@ -87,6 +87,9 @@
                            <a href="{{ url('user/login') }}" class="btn btn-success btn-block">登录提交答案</a>
                         @endif
                     </div>
+                </div>
+            </div>
+        </div>
                                     <div class="col-md-3">
                                     <div class="panel panel-default">
                                     <div class="panel-heading question-follow">
@@ -112,10 +115,6 @@
                                     </div>
                                     </div>
                                     </div>
-                </div>
-            </div>
-
-        </div>
     </div>
 
     <script type="text/javascript">
