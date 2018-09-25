@@ -16,7 +16,6 @@
     <script src="/js/select2.min.js"></script>
 </head>
 <body>
-<div id="app">
 <nav class="navbar navbar-default navbar-static-top">
     <div class="container">
         <div class="navbar-header">
@@ -58,6 +57,5 @@
 <script src="/js/app.js"></script>
 @yield('js')
 @include('footer')
-</div>
 </body>
 </html>
