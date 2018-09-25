@@ -63,7 +63,7 @@
                             </div>
                         </div>
                         <question-follow-button question="{{$question->id}}"></question-follow-button>
-                        <a href="#editor" class="btn btn-primary pull-right">撰写答案</a>
+                        <a href="#editor" class="btn btn-default pull-right">发送私信</a>
                     </div>
                 </div>
             </div>
