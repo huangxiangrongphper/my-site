@@ -62,7 +62,11 @@
                                 </div>
                             </div>
                         </div>
+                        @if(Auth::check())
                         <user-follow-button user="{{$question->user_id}}"></user-follow-button>
+                        @else
+                        <a href="{{url('user/login')}}" class="btn btn-default">关注他</a>
+                        @endif
                         <a href="#editor" class="btn btn-default pull-right">发送私信</a>
                     </div>
                 </div>
