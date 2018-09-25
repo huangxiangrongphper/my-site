@@ -87,6 +87,8 @@
                            <a href="{{ url('user/login') }}" class="btn btn-success btn-block">登录提交答案</a>
                         @endif
                     </div>
+                    </div>
+                    </div>
                 </div>
             </div>
             <div class="col-md-3">
