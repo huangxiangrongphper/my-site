@@ -27,7 +27,7 @@
         },
         methods:{
             follow() {
-                axios.post('/api/user/follow',{'user':this.user}).then(response => {
+                axios.post('/api/user/follow/'+ this.user).then(response => {
                     this.followed = response.data.followed
                 })
             }
