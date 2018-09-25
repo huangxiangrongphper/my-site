@@ -37,6 +37,8 @@ class FollowersController extends Controller
         $followed = Auth::guard('api')->user()->followThisUser($userToFollow->id);
 
         if(count($followed['attached']) > 0){
+            //如果有用户关注 要通知问题用户 使用站内信
+
             $userToFollow->increment('followers_count');
 
             Auth::guard('api')->user()->increment('followings_count');
