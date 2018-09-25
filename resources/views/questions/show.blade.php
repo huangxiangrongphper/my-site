@@ -31,6 +31,31 @@
             <div class="col-md-3">
                 <div class="panel panel-default">
                     <div class="panel-heading question-follow">
+                        <h2>关于作者</h2>
+                    </div>
+                    <div class="panel-body">
+                        <div class="media">
+                            <div class="media-left">
+                                <a href="#">
+                                    <img width="36" src="{{$question->user->avatar}}" alt="{{$question->user->name}}">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">
+                                    <a href="">
+                                        {{$question->user->name}}
+                                    </a>
+                                </h4>
+                            </div>
+                        </div>
+                        <question-follow-button question="{{$question->id}}"></question-follow-button>
+                        <a href="#editor" class="btn btn-primary pull-right">撰写答案</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+                    <div class="panel-heading question-follow">
                         <h2>{{ $question->followers_count }}</h2>
                         <span>关注者</span>
                     </div>
@@ -90,31 +115,7 @@
                 </div>
             </div>
         </div>
-                                    <div class="col-md-3">
-                                    <div class="panel panel-default">
-                                    <div class="panel-heading question-follow">
-                                    <h2>关于作者</h2>
-                                    </div>
-                                    <div class="panel-body">
-                                    <div class="media">
-                                    <div class="media-left">
-                                    <a href="#">
-                                    <img width="36" src="{{$question->user->avatar}}" alt="{{$question->user->name}}">
-                                    </a>
-                                    </div>
-                                    <div class="media-body">
-                                    <h4 class="media-heading">
-                                    <a href="">
-                                        {{$question->user->name}}
-                                    </a>
-                                    </h4>
-                                    </div>
-                                    </div>
-                                    <question-follow-button question="{{$question->id}}"></question-follow-button>
-                                    <a href="#editor" class="btn btn-primary pull-right">撰写答案</a>
-                                    </div>
-                                    </div>
-                                    </div>
+
     </div>
 
     <script type="text/javascript">
