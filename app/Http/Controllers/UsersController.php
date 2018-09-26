@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mailer\UserMailer;
 use App\User;
 use EasyWeChat\Payment\Kernel\Exceptions\SandboxException;
 use Illuminate\Http\Request;
@@ -172,16 +173,8 @@ class UsersController extends Controller
 
     public function sendPasswordResetNotification($token,$user_email)
     {
-        $data = [
-            'url' => route('passwordReset',['token' => $token]),
-        ];
-        $template = new SendCloudTemplate('hellohxr',$data);
+        (new UserMailer())->passwordReset($user_email->email,$token);
 
-        Mail::raw($template,function ($message) use($user_email) {
-            $message->from('huangxiangrong827@163.com','hellohxr.cn');
-            $message->to($user_email->email);
-        });
-        sleep(2);
         \Session::flash('password_reset_success','验证信息已发送到您的邮箱,请马上重置您的密码🤗');
         return back()->withInput();
     }
