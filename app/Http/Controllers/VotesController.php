@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use App\Repositories\AnswerRepository;
 use Illuminate\Http\Request;
 

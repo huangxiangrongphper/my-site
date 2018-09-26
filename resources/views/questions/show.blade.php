@@ -106,9 +106,9 @@
                                     <a href="/user/{{ $answers->user->name }}">
                                         {{ $answers->user->name }}
                                     </a>
+                                    点赞 : <user-voted-button answer="{{$answers->id}}" count="{{$answers->votes_count}}"></user-voted-button>
                                 </h4>
-                                 <user-voted-button answer="{{$answers->id}}" count="{{$answers->votes_count}}"></user-voted-button> {!! $answers->body !!}
-
+                                     {!! $answers->body !!}
                             </div>
                         </div>
                     @endforeach
