@@ -40,12 +40,12 @@ class QuestionRepository
     public function getSumVotes()
     {
         $questions = Question::all();
-        $answers = 0;
+        $answers = [];
         foreach ($questions as $question)
         {
-          dd($question->answers);
+            $answers = $question->answers;
         }
-
+            dd($answers);
     }
 
     public function normalizeTopic(array $topics)
