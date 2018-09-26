@@ -43,12 +43,9 @@ class QuestionRepository
         $answers = 0;
         foreach ($questions as $question)
         {
-            foreach ($question->answers() as $answer){
-                $answers += $answer->votes_count;
-            }
+          dd($question->answers());
         }
 
-        return $answers;
     }
 
     public function normalizeTopic(array $topics)
