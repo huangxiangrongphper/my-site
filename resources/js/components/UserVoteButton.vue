@@ -9,7 +9,7 @@
 
 <script>
     export default {
-        props:['answer','count'],
+        props:['answer','voted_count'],
         mounted() {
             axios.post('/api/answer/' + this.answer + '/votes/users').then(response => {
                 this.voted = response.data.voted
@@ -17,7 +17,8 @@
         },
         data() {
             return {
-                voted :false
+                voted :false ,
+                voted_count: this.count
             }
         },
         computed: {
