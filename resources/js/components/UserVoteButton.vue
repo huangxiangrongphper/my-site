@@ -23,7 +23,7 @@
         },
         computed: {
             text() {
-                return this.voted_count
+                return this.count
             }
         },
         methods:{
