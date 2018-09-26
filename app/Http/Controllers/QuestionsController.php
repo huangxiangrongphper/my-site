@@ -34,6 +34,7 @@ class QuestionsController extends Controller
      */
     public function index()
     {
+        dd($this->questionRepository->getSumVotes());
         $questions = $this->questionRepository->getQuestionsFeed();
         return view('questions.index',compact('questions'));
     }

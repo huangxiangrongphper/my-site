@@ -37,6 +37,20 @@ class QuestionRepository
         return Question::published()->latest('updated_at')->with('user')->get();
     }
 
+    public function getSumVotes()
+    {
+        $questions = Question::all();
+        $answers = 0;
+        foreach ($questions as $question)
+        {
+            foreach ($question->answers() as $answer){
+                $answers += $answer->votes_count;
+            }
+        }
+
+        return $answers;
+    }
+
     public function normalizeTopic(array $topics)
     {
         return collect($topics)->map(function ($topic){
