@@ -43,7 +43,7 @@ class QuestionRepository
         $answers = 0;
         foreach ($questions as $question)
         {
-          dd($question->answers());
+          dd($question->answers);
         }
 
     }
