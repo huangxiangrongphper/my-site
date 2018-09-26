@@ -44,15 +44,16 @@ class QuestionRepository
         $votes = [];
         foreach ($questions as $key => $question)
         {
-            $answers[$key] = $question->answers;
+            $answers[$key] = $question->answers->toArray();
         }
+        dd($answers);
 
         foreach ($answers as $key => $answer)
         {
-            $votes[$key] = $answer->toArray()['votes_count'];
+            $votes[$key] = $answer['votes_count'];
         }
 
-        dd($votes);
+
     }
 
     public function normalizeTopic(array $topics)
