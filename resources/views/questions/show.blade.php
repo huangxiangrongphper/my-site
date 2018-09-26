@@ -107,8 +107,8 @@
                                         {{ $answers->user->name }}
                                     </a>
                                 </h4>
-                                {!! $answers->body !!}
-                                <user-voted-button answer="{{$answers->id}}" count="{{$answers->votes_count}}"></user-voted-button>
+                                {!! $answers->body !!} <user-voted-button answer="{{$answers->id}}" count="{{$answers->votes_count}}"></user-voted-button>
+
                             </div>
                         </div>
                     @endforeach
