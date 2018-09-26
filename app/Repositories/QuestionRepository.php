@@ -44,9 +44,9 @@ class QuestionRepository
         $votes = [];
         foreach ($questions as $question)
         {
-            foreach ($question->answers as $key => $answers)
+            foreach ($question->answers as $key => $answer)
             {
-                $answers[$key] = $answers;
+                $answers[$key] = $answer;
             }
         }
          dd($answers);
