@@ -106,7 +106,7 @@
                                     <a href="/user/{{ $answers->user->name }}">
                                         {{ $answers->user->name }}
                                     </a>
-                                    👍  <user-voted-button answer="{{$answers->id}}" count="{{$answers->votes_count}}"></user-voted-button>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;点赞👍  <user-voted-button answer="{{$answers->id}}" count="{{$answers->votes_count}}"></user-voted-button>
                                 </h4>
                                      {!! $answers->body !!}
                             </div>
