@@ -30,7 +30,7 @@
             vote() {
                 axios.post('/api/answer/vote',{'answer':this.answer}).then(response => {
                     this.voted = response.data.followed
-                    response.data.followed ? this.voted_count ++ : this.voted_count --
+                    response.data.followed ? this.count ++ : this.count --
                 })
             }
         }
