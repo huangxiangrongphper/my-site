@@ -52,7 +52,7 @@ Route::get('/user/followers/{id}','FollowersController@index');
 Route::post('/user/follow','FollowersController@follow');
 
 Route::post('/answer/{id}/votes/users','VotesController@users');
-Route::post('/user/vote','VotesController@vote');
+Route::post('/answer/vote','VotesController@vote');
 
 
 
