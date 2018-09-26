@@ -49,7 +49,7 @@ class QuestionRepository
 
         foreach ($answers as $key => $answer)
         {
-            $votes[$key] = $answer->votes_count;
+            $votes[$key] = $answer->toArray()->votes_count;
         }
 
         dd($votes);
