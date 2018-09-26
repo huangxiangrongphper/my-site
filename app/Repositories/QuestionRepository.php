@@ -42,11 +42,14 @@ class QuestionRepository
         $questions = Question::all();
         $answers = [];
         $votes = [];
-        foreach ($questions as $key => $question)
+        foreach ($questions as $question)
         {
-            $answers[$key] = $question->answers->toArray();
+            foreach ($question->answers as $key => $answers)
+            {
+                $answers[$key] = $answers;
+            }
         }
-        dd($answers);
+         dd($answers);
 
         foreach ($answers as $key => $answer)
         {
