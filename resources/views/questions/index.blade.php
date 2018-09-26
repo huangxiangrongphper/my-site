@@ -26,7 +26,7 @@
                                 <span class="media-conversation-replies">
                                     {{ $question->answers_count }}回复
                                 &nbsp;&nbsp;&nbsp;&nbsp;{{ $question->followers_count }}关注者
-                                &nbsp;&nbsp;&nbsp;&nbsp;{{ $question->answers()->votes_count }}👍
+                                &nbsp;&nbsp;&nbsp;&nbsp;{{ $question->answers->votes_count }}👍
                                 </span>
                             </div>
                         </h4>
