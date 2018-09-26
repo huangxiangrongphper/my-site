@@ -41,9 +41,9 @@ class QuestionRepository
     {
         $questions = Question::all();
         $answers = [];
-        foreach ($questions as $question)
+        foreach ($questions as $key => $question)
         {
-            $answers = $question->answers;
+            $answers[$key] = $question->answers;
         }
             dd($answers);
     }
