@@ -41,11 +41,18 @@ class QuestionRepository
     {
         $questions = Question::all();
         $answers = [];
+        $votes = [];
         foreach ($questions as $key => $question)
         {
             $answers[$key] = $question->answers;
         }
-            dd($answers);
+
+        foreach ($answers as $key => $answer)
+        {
+            $votes[$key] = $answer->votes_count;
+        }
+
+        dd($votes);
     }
 
     public function normalizeTopic(array $topics)
