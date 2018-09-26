@@ -2,11 +2,14 @@
 
 namespace App\Notifications;
 
+use App\Channels\SendcloudChannel;
 use Auth;
+use Mail;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
+use Naux\Mail\SendCloudTemplate;
 
 class NewUserFollowNotification extends Notification
 {
@@ -30,7 +33,22 @@ class NewUserFollowNotification extends Notification
      */
     public function via($notifiable)
     {
-        return ['database'];
+        return ['database',SendcloudChannel::class];
+    }
+
+    public function toSendcloud($notifiable)
+    {
+        $data = [
+            'url'  => 'http://hellohxr.cn',
+            'name' => Auth::guard('api')->user()->name
+        ];
+        $template = new SendCloudTemplate('user_follow_you', $data);
+
+        Mail::raw($template, function ($message) use ($notifiable) {
+            $message->from('huangxiangrong827@163.com', 'hellohxr.cn');
+
+            $message->to($notifiable->email);
+        });
     }
 
     public function toDatabase($notifiable)
