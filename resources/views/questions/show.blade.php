@@ -118,7 +118,7 @@
                         @if(Auth::check())
                         <send-message user="{{ $question->user_id }}"></send-message>
                         @else
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{{url('user/login')}}" class="btn btn-default">发送私信</a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{{url('user/login')}}" class="btn btn-default">发送私信</a>
                         @endif
                     </div>
                 </div>
