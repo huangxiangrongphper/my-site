@@ -115,9 +115,9 @@
                         @else
                         <a href="{{url('user/login')}}" class="btn btn-default">关注他</a>
                         @endif
-                        @if(Auth::check() && $question->user_id == Auth::user()->id)
+                        @if(Auth::check() && $question['user_id'] == Auth::user()->id)
                         <send-message user="{{ $question->user_id }}"></send-message>
-                        @elseif($question->user_id == Auth::user()->id)
+                        @elseif($question['user_id'] == Auth::user()->id)
                         @else
                         <a href="{{url('user/login')}}" class="btn btn-default">发送私信</a>
                         @endif
