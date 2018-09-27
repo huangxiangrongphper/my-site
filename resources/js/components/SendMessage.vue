@@ -56,7 +56,8 @@
                 })
             },
             showSendMessageForm() {
-                $('#modal-send-message').modal('show')
+                $('#modal-send-message').modal('show'),
+                this.status = false
             }
         }
     }
