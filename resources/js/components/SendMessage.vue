@@ -17,7 +17,7 @@
                     </div>
 
                     <div class="modal-body">
-                        <textarea name="body" class="form-control" v-model="body" v-if="!status"></textarea>
+                        <textarea name="body" class="form-control" v-model="body" v-if="!status" v-validate.initial="'required'" :class="{'form-control': true, 'is-danger': errors.has('body') }"></textarea>
                         <div class="alert alert-success" v-if="status">
                             <strong>私信发送成功</strong>
                         </div>
