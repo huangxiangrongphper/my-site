@@ -9,6 +9,15 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+import ar from 'vee-validate/dist/locale/ar';
+import VeeValidate, { Validator } from 'vee-validate';
+
+// Localize takes the locale object as the second argument (optional) and merges it.
+Validator.localize('ar', ar);
+
+// Install the Plugin.
+Vue.use(VeeValidate);
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
