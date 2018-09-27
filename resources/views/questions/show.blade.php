@@ -158,7 +158,11 @@
                                     <a href="/user/{{ $answers->user->name }}">
                                         {{ $answers->user->name }}
                                     </a>
+                                    @if(Auth::check())
                                     &nbsp;&nbsp;&nbsp;&nbsp;点赞👍  <user-voted-button answer="{{$answers->id}}" count="{{$answers->votes_count}}"></user-voted-button>
+                                    @else
+                                    <a href="{{url('user/login')}}" class="btn btn-default">点赞👍</a>
+                                    @endif
                                 </h4>
                                      {!! $answers->body !!}
                             </div>
