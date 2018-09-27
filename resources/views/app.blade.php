@@ -14,6 +14,7 @@
     <script src="/js/jquery.Jcrop.min.js"></script>
     <script src="/js/jquery.form.js"></script>
     <script src="/js/select2.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 <nav class="navbar navbar-default navbar-static-top">
