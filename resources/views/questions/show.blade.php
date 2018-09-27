@@ -1,6 +1,7 @@
 @extends('app')
 @section('content')
     @include('vendor.ueditor.assets')
+    <link href="https://cdn.bootcss.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
     <div class="container" id="app" >
         <div class="row">
             <div class="col-md-8 col-md-offset-1" >
