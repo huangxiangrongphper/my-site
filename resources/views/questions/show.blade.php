@@ -206,3 +206,4 @@
     </script>
 </body>
 </html>
+<script src="/js/app.js"></script>
