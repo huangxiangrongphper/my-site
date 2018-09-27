@@ -1,8 +1,7 @@
 <template>
     <div>
     <button
-            class="btn btn-default"
-            v-bind:class="{'btn-primary' : voted}"
+            class="btn btn-default pull-right"
             @click="showSendMessageForm"
     >发送私信</button>
         <div class="modal fade" id="modal-send-message" tabindex="-1" role="dialog">
