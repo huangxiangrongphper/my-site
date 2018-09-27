@@ -10,11 +10,11 @@
     <link rel="stylesheet" href="/css/select2.min.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/jquery.Jcrop.css">
+    <link rel="stylesheet" href="/css/app.css">
     <script src="/js/jquery-2.1.4.min.js"></script>
     <script src="/js/jquery.Jcrop.min.js"></script>
     <script src="/js/jquery.form.js"></script>
     <script src="/js/select2.min.js"></script>
-    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 <nav class="navbar navbar-default navbar-static-top">
