@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="/css/font-awesome.css">
     <link rel="stylesheet" href="/css/select2.min.css">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/jquery.Jcrop.css">
+    <script src="/js/jquery-2.1.4.min.js"></script>
+    <script src="/js/jquery.Jcrop.min.js"></script>
+    <script src="/js/jquery.form.js"></script>
     <script src="/js/select2.min.js"></script>
 </head>
 <body>

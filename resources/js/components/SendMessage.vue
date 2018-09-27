@@ -17,8 +17,8 @@
                     </div>
 
                     <div class="modal-body">
-                        <textarea name="body" class="form-control" v-model="body" v-if="!status"></textarea>
-                        <div class="alert alert-success" v-if="status">
+                        <textarea name="body" class="form-control" v-model="body" ></textarea>
+                        <div class="alert alert-success">
                             <strong>私信发送成功</strong>
                         </div>
                     </div>
