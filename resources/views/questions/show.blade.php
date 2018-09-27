@@ -67,7 +67,7 @@
                         @else
                         <a href="{{url('user/login')}}" class="btn btn-default">关注他</a>
                         @endif
-                        <a href="#editor" class="btn btn-default pull-right">发送私信</a>
+                        <send-message></send-message>
                     </div>
                 </div>
             </div>
