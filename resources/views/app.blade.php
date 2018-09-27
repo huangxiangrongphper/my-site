@@ -5,11 +5,11 @@
     <title>hellohxr.cn</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="apiToken" content="{{ Auth::check() ? 'Bearer '.Auth::user()->api_token : 'Bearer ' }}">
+    <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/font-awesome.css">
     <link rel="stylesheet" href="/css/select2.min.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/jquery.Jcrop.css">
-    <link rel="stylesheet" href="/css/app.css">
     <script src="/js/jquery-2.1.4.min.js"></script>
     <script src="/js/jquery.Jcrop.min.js"></script>
     <script src="/js/jquery.form.js"></script>
