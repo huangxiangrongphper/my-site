@@ -14,7 +14,6 @@
     <script src="/js/jquery.Jcrop.min.js"></script>
     <script src="/js/jquery.form.js"></script>
     <script src="/js/select2.min.js"></script>
-    <script src="/js/app.js"></script>
 </head>
 <body>
 <nav class="navbar navbar-default navbar-static-top">
@@ -55,6 +54,7 @@
     </div>
 </nav>
 @yield('content')
+<script src="/js/app.js"></script>
 @yield('js')
 @include('footer')
 </body>
