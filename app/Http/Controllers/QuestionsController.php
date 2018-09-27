@@ -34,7 +34,7 @@ class QuestionsController extends Controller
      */
     public function index()
     {
-        
+
         $questions = $this->questionRepository->getQuestionsFeed();
         return view('questions.index',compact('questions'));
     }
