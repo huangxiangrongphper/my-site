@@ -115,7 +115,7 @@
                         @else
                         <a href="{{url('user/login')}}" class="btn btn-default">关注他</a>
                         @endif
-                        <send-message></send-message>
+                        <send-message user="{{ $question->user_id }}"></send-message>
                     </div>
                 </div>
             </div>

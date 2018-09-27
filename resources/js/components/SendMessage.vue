@@ -2,6 +2,7 @@
     <div>
     <button
             class="btn btn-default pull-right"
+            style="margin-top: -36px;"
             @click="showSendMessageForm"
     >发送私信</button>
         <div class="modal fade" id="modal-send-message" tabindex="-1" role="dialog">
@@ -16,15 +17,18 @@
                     </div>
 
                     <div class="modal-body">
-                        <textarea name="body" class="form-control"></textarea>
+                        <textarea name="body" class="form-control" v-model="body" v-if="!status"></textarea>
+                        <div class="alert alert-success" v-if="status">
+                            <strong>私信发送成功</strong>
+                        </div>
                     </div>
 
                     <!-- Modal Actions -->
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
                         <button type="button" class="btn btn-primary" @click="store">
                             发送私信
                         </button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
                     </div>
                 </div>
             </div>
@@ -34,28 +38,21 @@
 
 <script>
     export default {
-        props:['answer','count'],
-        mounted() {
-            axios.post('/api/answer/' + this.answer + '/votes/users').then(response => {
-                this.voted = response.data.voted
-            })
-        },
+        props:['user'],
         data() {
             return {
-                voted :false ,
-                voted_count: this.count
-            }
-        },
-        computed: {
-            text() {
-                return this.voted_count
+                body:'',
+                status:false
             }
         },
         methods:{
             store() {
-                axios.post('/api/answer/vote',{'answer':this.answer}).then(response => {
-                    this.voted = response.data.voted
-                    response.data.voted ? this.voted_count ++ : this.voted_count --
+                axios.post('/api/message/store',{'user':this.user,'body':this.body}).then(response => {
+                    this.status = response.data.status
+                    this.body = ''
+                    setTimeout(function () {
+                        $('#modal-send-message').modal('hide')
+                    },2000)
                 })
             },
             showSendMessageForm() {
