@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Repositories\MessageRepository;
+use Auth;
 
 class MessagesController extends Controller
 {
