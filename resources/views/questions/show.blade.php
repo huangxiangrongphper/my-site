@@ -9,6 +9,14 @@
     <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
     <link rel="stylesheet" href="/css/font-awesome.css">
     <link rel="stylesheet" href="/css/style.css">
+    <script>
+    @if(Auth::check())
+        window.hellohxr = {
+            name: "{{Auth::user()->name}}",
+            avatar: "{{Auth::user()->avatar}}"
+        }
+    @endif
+    </script>
 </head>
 <body>
 <nav class="navbar navbar-default navbar-static-top">
@@ -76,7 +84,7 @@
                         <comments
                                 type="question"
                                 model="{{ $question->id }}"
-                                count="{{ $question->comments_count }}">
+                                count="{{ $question->comments()->count() }}">
 
                         </comments>
                     </div>

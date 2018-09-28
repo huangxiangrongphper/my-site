@@ -49,7 +49,14 @@
         data() {
             return {
                 body:'',
-                comments: []
+                comments: [],
+                newComment: {
+                    user:{
+                        name:hellohxr.name,
+                        avatar:hellohxr.avatar
+                    },
+                    body:''
+                }
             }
         },
         computed:{
@@ -66,7 +73,10 @@
         methods:{
             store() {
                 axios.post('/api/comment',{'type':this.type,'model':this.model,'body':this.body}).then(response => {
-                    console.log(response.data);
+                    this.newComment.body = response.data.body
+                    this.comments.push(this.newComment)
+                    this.body = ''
+                    this.count ++
                 })
             },
             showCommentsForm() {
@@ -75,7 +85,7 @@
             },
             getComments() {
                 axios.get('/api/' + this.type + '/' + this.model + '/comments').then(response => {
-                    this.comments = response.data.comments
+                    this.comments = response.data.
                 })
             }
         }
