@@ -13,7 +13,7 @@
     @if(Auth::check())
         window.hellohxr = {
             name: "{{Auth::user()->name}}",
-            avatar: "{{Auth::user()->avatar}}"
+          avatar: "{{Auth::user()->avatar}}"
         }
     @endif
     </script>
