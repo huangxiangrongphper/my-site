@@ -21,7 +21,7 @@
                             <div class="media" v-for="comment in comments">
                                 <div class="media-left">
                                     <a href="#">
-                                        <img width="24" class="media-object" :src="comment.user.avatar">
+                                        <img width="12" class="media-object" :src="comment.user.avatar">
                                     </a>
                                 </div>
                                 <div class="media-body">
