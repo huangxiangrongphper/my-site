@@ -179,13 +179,13 @@
                                     @endif
                                 </h4>
                                      {!! $answers->body !!}
-                            </div>
-                            <comments
-                                    type="answer"
-                                    model="{{ $answers->id }}"
-                                    count="{{ $answers->comments()->count() }}">
+                                <comments
+                                        type="answer"
+                                        model="{{ $answers->id }}"
+                                        count="{{ $answers->comments()->count() }}">
 
-                            </comments>
+                                </comments>
+                            </div>
                         </div>
                     @endforeach
                         @if(Auth::check())
