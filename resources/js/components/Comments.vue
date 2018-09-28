@@ -69,8 +69,8 @@
                 axios.post('/api/comment',{'type':this.type,'model':this.model,'body':this.body}).then(response => {
                     let comment = {
                         user : {
-                            name:Zhihu.name,
-                            avatar:Zhihu.avatar
+                            name:hellohxr.name,
+                            avatar:hellohxr.avatar
                         },
                         body: response.data.body
                     }
