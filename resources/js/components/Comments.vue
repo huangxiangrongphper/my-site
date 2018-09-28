@@ -74,7 +74,7 @@
                         },
                         body: response.data.body
                     }
-                    this.comments.push(this.comment)
+                    this.comments.push(comment)
                     this.body = ''
                     this.comment_count ++
                 })
