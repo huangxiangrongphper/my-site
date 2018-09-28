@@ -85,7 +85,7 @@
             },
             getComments() {
                 axios.get('/api/' + this.type + '/' + this.model + '/comments').then(response => {
-                    this.comments = response.data.
+                    this.comments = response.data
                 })
             }
         }
