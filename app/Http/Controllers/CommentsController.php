@@ -3,57 +3,58 @@
 namespace App\Http\Controllers;
 
 use App\Comment;
-use Illuminate\Http\Request;
+use Auth;
+use App\Answer;
+use App\Question;
 
 class CommentsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
+
     public function index()
     {
         //
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function answer($id)
     {
-         $comment = $request->validate([
-            'body'    => 'required',
-            'discussion_id' => 'required',
-        ]);
+        $answer = Answer::with('comments','comments.user')->where('id',$id)->first();
 
-         $comment_data = array_merge($comment,['user_id'=>\Auth::user()->id]);
-
-         Comment::create($comment_data);
-
-         return redirect()->action('PostsController@show',['id'=>$request->get('discussion_id')]);
-
+        return $answer->comments;
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    public function question($id)
+    {
+        $question = Question::with('comments','comments.user')->where('id',$id)->first();
+
+        return $question->comments;
+    }
+
+    public function store()
+    {
+        $model = $this->getModelNameFromType(request('type'));
+
+        $comment = Comment::create([
+            'commentable_id' => request('model'),
+            'commentable_type' => $model,
+            'user_id' => Auth::guard('api')->user()->id,
+            'body' => request('body')
+        ]);
+
+        return $comment;
+    }
+
+    private function getModelNameFromType($type)
+    {
+        return $type === 'question' ? 'App\Question' : 'App\Answer';
+    }
+
     public function show($id)
     {
         //
@@ -92,4 +93,5 @@ class CommentsController extends Controller
     {
         //
     }
+
 }
