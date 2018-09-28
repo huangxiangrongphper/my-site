@@ -164,11 +164,6 @@
                             <div class="media-left">
                                 <a href="">
                                     <img src="{{ $question->user->avatar }}" alt="64x64" class="media-object img-circle" style="width: 36px;height: 36px">
-                                    @if(Auth::check())
-                                        &nbsp;&nbsp;&nbsp;&nbsp;点赞👍  <user-voted-button answer="{{$answers->id}}" count="{{$answers->votes_count}}"></user-voted-button>
-                                    @else
-                                        <a href="{{url('user/login')}}" class="btn btn-default">点赞👍</a>
-                                    @endif
                                 </a>
                             </div>
                             <div class="media-body" >
@@ -176,15 +171,22 @@
                                     <a href="/user/{{ $answers->user->name }}">
                                         {{ $answers->user->name }}
                                     </a>
+                                    @if(Auth::check())
+                                    &nbsp;&nbsp;&nbsp;&nbsp;点赞👍  <user-voted-button answer="{{$answers->id}}" count="{{$answers->votes_count}}"></user-voted-button>
+                                    @else
+                                    <a href="{{url('user/login')}}" class="btn btn-default">点赞👍</a>
+                                    @endif
                                 </h4>
                                      {!! $answers->body !!}
                             </div>
+                            <div style="width: 50px">
                             <comments
                                     type="answer"
                                     model="{{ $answers->id }}"
                                     count="{{ $answers->comments()->count() }}">
 
                             </comments>
+                            </div>
                         </div>
                     @endforeach
                         @if(Auth::check())
