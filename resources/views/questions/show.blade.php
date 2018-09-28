@@ -158,7 +158,7 @@
                 <div class="panel-heading">
                     {{ $question->answers_count }} 个答案
                 </div>
-                <div class="panel-body content">
+                <div class="panel-body">
                     @foreach($question->answers as $answers)
                         <div class="media">
                             <div class="media-left">
