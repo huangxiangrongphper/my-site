@@ -56,7 +56,8 @@
                         avatar:hellohxr.avatar
                     },
                     body:''
-                }
+                },
+                comment_count: this.count
             }
         },
         computed:{
@@ -76,7 +77,7 @@
                     this.newComment.body = response.data.body
                     this.comments.push(this.newComment)
                     this.body = ''
-                    this.count ++
+                    this.comment_count ++
                 })
             },
             showCommentsForm() {
