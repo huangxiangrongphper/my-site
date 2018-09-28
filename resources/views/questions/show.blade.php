@@ -159,12 +159,16 @@
                     {{ $question->answers_count }} 个答案
                 </div>
                 <div class="panel-body content">
-
                     @foreach($question->answers as $answers)
                         <div class="media">
                             <div class="media-left">
                                 <a href="">
                                     <img src="{{ $question->user->avatar }}" alt="64x64" class="media-object img-circle" style="width: 36px;height: 36px">
+                                    @if(Auth::check())
+                                        &nbsp;&nbsp;&nbsp;&nbsp;点赞👍  <user-voted-button answer="{{$answers->id}}" count="{{$answers->votes_count}}"></user-voted-button>
+                                    @else
+                                        <a href="{{url('user/login')}}" class="btn btn-default">点赞👍</a>
+                                    @endif
                                 </a>
                             </div>
                             <div class="media-body" >
@@ -172,20 +176,15 @@
                                     <a href="/user/{{ $answers->user->name }}">
                                         {{ $answers->user->name }}
                                     </a>
-                                    @if(Auth::check())
-                                    &nbsp;&nbsp;&nbsp;&nbsp;点赞👍  <user-voted-button answer="{{$answers->id}}" count="{{$answers->votes_count}}"></user-voted-button>
-                                    @else
-                                    <a href="{{url('user/login')}}" class="btn btn-default">点赞👍</a>
-                                    @endif
                                 </h4>
                                      {!! $answers->body !!}
-                                <comments
-                                        type="answer"
-                                        model="{{ $answers->id }}"
-                                        count="{{ $answers->comments()->count() }}">
-
-                                </comments>
                             </div>
+                            <comments
+                                    type="answer"
+                                    model="{{ $answers->id }}"
+                                    count="{{ $answers->comments()->count() }}">
+
+                            </comments>
                         </div>
                     @endforeach
                         @if(Auth::check())
