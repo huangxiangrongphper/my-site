@@ -174,8 +174,8 @@
                             </div>
                             <comments
                                     type="answer"
-                                    model="{{ $answer->id }}"
-                                    count="{{ $answer->comments()->count() }}">
+                                    model="{{ $answers->id }}"
+                                    count="{{ $answers->comments()->count() }}">
 
                             </comments>
                         </div>
