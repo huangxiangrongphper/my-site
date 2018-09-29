@@ -23,7 +23,7 @@ class FollowersController extends Controller
 
         $followers = $user->followersUser()->pluck('follower_id')->toArray();
 
-        if(in_array(Auth::guard('api')->user()->id,$followers))
+        if(in_array(user('api')->id,$followers))
         {
             return response()->json(['followed' => true]);
         }
@@ -44,11 +44,11 @@ class FollowersController extends Controller
 
             $userToFollow->increment('followers_count');
 
-            Auth::guard('api')->user()->increment('followings_count');
+            user('api')->increment('followings_count');
             return response()->json(['followed' => true]);
         }
         $userToFollow->decrement('followers_count');
-        Auth::guard('api')->user()->decrement('followings_count');
+        user('api')->decrement('followings_count');
         return response()->json(['followed' => false]);
     }
 }
