@@ -19,9 +19,7 @@ class InboxController extends Controller
     public function index()
     {
         $messages = user()->messages->groupBy('from_user_id');
-
-        dd($messages);
-
+        
         return view('inbox.index',compact('messages'));
     }
 
