@@ -27,9 +27,9 @@ class InboxController extends Controller
         return view('inbox.index',['messages' => $messages->groupBy('to_user_id') ]);
     }
 
-    public function show($userId)
+    public function show($dialogId)
     {
-        $messages = Message::where('from_user_id',$userId)->get();
+        $messages = Message::where('dialog_id',$dialogId)->get();
 
         return $messages;
     }
