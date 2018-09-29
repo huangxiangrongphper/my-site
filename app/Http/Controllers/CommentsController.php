@@ -2,27 +2,27 @@
 
 namespace App\Http\Controllers;
 
-use App\Comment;
 use App\Repositories\AnswerRepository;
+use App\Repositories\CommentRepository;
 use App\Repositories\QuestionRepository;
 use Auth;
-use App\Answer;
-use App\Question;
 
 class CommentsController extends Controller
 {
     protected $questionRepository;
     protected $AnswerRepository;
+    protected $commentRepository;
 
     /**
      * CommentsController constructor.
      *
      * @param $questionRepository
      */
-    public function __construct(QuestionRepository $questionRepository,AnswerRepository $AnswerRepository)
+    public function __construct(QuestionRepository $questionRepository,AnswerRepository $AnswerRepository,CommentRepository $commentRepository)
     {
         $this->questionRepository = $questionRepository;
         $this->AnswerRepository   = $AnswerRepository;
+        $this->commentRepository = $commentRepository;
     }
 
     public function index()
@@ -38,16 +38,12 @@ class CommentsController extends Controller
 
     public function answer($id)
     {
-        $answer = Answer::with('comments','comments.user')->where('id',$id)->first();
-
-        return $answer->comments;
+        return $this->AnswerRepository->getAnswerCommentsById($id);
     }
 
     public function question($id)
     {
-        $question = Question::with('comments','comments.user')->where('id',$id)->first();
-
-        return $question->comments;
+        return $this->questionRepository->getQuestionCommentsById($id);
     }
 
     public function store()
@@ -65,14 +61,12 @@ class CommentsController extends Controller
             $answer->save();
         }
 
-        $comment = Comment::create([
+        return $this->commentRepository->create([
             'commentable_id' => request('model'),
             'commentable_type' => $model,
             'user_id' => Auth::guard('api')->user()->id,
             'body' => request('body')
         ]);
-
-        return $comment;
     }
 
     private function getModelNameFromType($type)
