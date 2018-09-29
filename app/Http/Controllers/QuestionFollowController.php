@@ -37,7 +37,7 @@ class QuestionFollowController extends Controller
     {
         $user = Auth::guard('api')->user();
 
-        $question = $this->question->getQuestionCommentsById($request->get('question')) ;
+        $question = $this->question->byId($request->get('question')) ;
         $followed = $user->followThis($question->id);
 
         if(count($followed['detached']) > 0) {
