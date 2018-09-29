@@ -2,13 +2,13 @@
 
 namespace App\Repositories;
 
-use Request;
 use App\Topic;
+use Illuminate\Http\Request;
 
 
 class TopicRepository
 {
-    public function getTopicsForTagging(\Illuminate\Http\Request $request)
+    public function getTopicsForTagging(Request $request)
     {
        return Topic::select(['id','name'])
             ->where('name','like','%'.$request->query('q').'%')
