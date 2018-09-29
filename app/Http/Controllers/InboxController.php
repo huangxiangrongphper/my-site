@@ -20,6 +20,10 @@ class InboxController extends Controller
     {
         $messages = user()->messages->groupBy('from_user_id');
 
+        foreach ($messages as $messageGroup ){
+            dd($messageGroup->first()->fromUser);
+        }
+
         return view('inbox.index',compact('messages'));
     }
 
