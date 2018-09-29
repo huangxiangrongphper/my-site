@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Message;
 use Illuminate\Http\Request;
 
 class InboxController extends Controller
@@ -19,6 +20,15 @@ class InboxController extends Controller
     {
         $messages = user()->messages->groupBy('from_user_id');
 
+        dd($messages);
+
         return view('inbox.index',compact('messages'));
+    }
+
+    public function show($userId)
+    {
+        $messages = Message::where('from_user_id',$userId)->get();
+
+        return $messages;
     }
 }
