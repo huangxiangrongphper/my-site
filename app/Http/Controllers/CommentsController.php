@@ -3,13 +3,27 @@
 namespace App\Http\Controllers;
 
 use App\Comment;
+use App\Repositories\AnswerRepository;
+use App\Repositories\QuestionRepository;
 use Auth;
 use App\Answer;
 use App\Question;
 
 class CommentsController extends Controller
 {
+    protected $questionRepository;
+    protected $AnswerRepository;
 
+    /**
+     * CommentsController constructor.
+     *
+     * @param $questionRepository
+     */
+    public function __construct(QuestionRepository $questionRepository,AnswerRepository $AnswerRepository)
+    {
+        $this->questionRepository = $questionRepository;
+        $this->AnswerRepository   = $AnswerRepository;
+    }
 
     public function index()
     {
@@ -39,6 +53,17 @@ class CommentsController extends Controller
     public function store()
     {
         $model = $this->getModelNameFromType(request('type'));
+
+        if($model === 'App\Question')
+        {
+            $question  = $this->questionRepository->byId(request('model'));
+            $question->increment('comments_count');
+            $question->save();
+        }else{
+            $answer = $this->AnswerRepository->byId(request('model'));
+            $answer->increment('comments_count');
+            $answer->save();
+        }
 
         $comment = Comment::create([
             'commentable_id' => request('model'),
