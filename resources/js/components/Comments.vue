@@ -76,7 +76,7 @@
                     }
                     this.comments.push(comment)
                     this.body = ''
-                    this.count ++
+                    this.comment_count ++
                 })
             },
             showCommentsForm() {
