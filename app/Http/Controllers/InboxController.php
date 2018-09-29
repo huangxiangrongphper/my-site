@@ -18,8 +18,10 @@ class InboxController extends Controller
 
     public function index()
     {
-        $messages = user()->messages->groupBy('from_user_id');
-
+        $messages = Message::where('to_user_id',user()->id)
+            ->orWhere('from_user_id',user()->id)
+            ->with(['fromUser','toUser'])->get();
+        return $messages;
         return view('inbox.index',compact('messages'));
     }
 
