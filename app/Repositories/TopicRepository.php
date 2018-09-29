@@ -8,7 +8,7 @@ use App\Topic;
 
 class TopicRepository
 {
-    public function getTopicsForTagging(Request $request)
+    public function getTopicsForTagging(\Illuminate\Http\Request $request)
     {
        return Topic::select(['id','name'])
             ->where('name','like','%'.$request->query('q').'%')
