@@ -13,16 +13,7 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
-Route::get('/topics', function (Request $request){
-    $topics = \App\Topic::select(['id','name'])
-        ->where('name','like','%'.$request->query('q').'%')
-        ->get();
-    return $topics;
-})->middleware('api');
+Route::get('/topics','TopicsController@index')->middleware('api');
 
 Route::post('/question/follower',function (Request $request){
     $user = Auth::guard('api')->user();

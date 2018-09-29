@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Repositories\QuestionRepository;
 use Auth;
-use Illuminate\Http\Request;
 
 /**
  * Class QuestionsController
@@ -183,4 +182,5 @@ class QuestionsController extends Controller
 
         abort(403,'Forbidden');// return back();
     }
+
 }
