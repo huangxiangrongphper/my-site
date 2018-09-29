@@ -9,7 +9,7 @@
                         @foreach($messages as $messageGroup)
                             <div class="media-left">
                                 <a href="">
-                                    <img src="{{ $messageGroup->first()->fromUser->avatar }}" alt="">
+                                    <img src="{{ $messageGroup->first()->fromUser->avatar }}" alt="" class="media-object img-circle" style="width: 32px;height: 32px">
                                 </a>
                             </div>
                             <div class="media-body">
@@ -18,7 +18,7 @@
                                 </h4>
                             </div>
                             <p>
-                                <a href="{{ $messageGroup->first()->fromUser->id }}">
+                                <a href="/inbox/{{ $messageGroup->first()->fromUser->id }}">
                                     {{ $messageGroup->first()->body }}
                                 </a>
                             </p>
