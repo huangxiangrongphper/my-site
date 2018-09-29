@@ -35,7 +35,7 @@ class FollowersController extends Controller
     {
         $userToFollow = $this->user->byId(request('user'));
 
-        $followed = Auth::guard('api')->user()->followThisUser($userToFollow->id);
+        $followed = user('api')->followThisUser($userToFollow->id);
 
         if(count($followed['attached']) > 0){
             //如果有用户关注 要通知问题用户 使用站内信
