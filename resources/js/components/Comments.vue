@@ -61,7 +61,7 @@
                 return '#' + this.dialog
             },
             text() {
-                return this.count + '评论'
+                return this.comment_count + '评论'
             }
         },
         methods:{
