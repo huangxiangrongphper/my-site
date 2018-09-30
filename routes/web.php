@@ -20,7 +20,7 @@ Route::any('/wechat', 'WeChatController@serve');
 Route::get('/image','MaterialController@image');
 Route::get('/audio','MaterialController@audio');
 
-Route::get('/about','UsersController@about');
+/*Route::get('/about','UsersController@about');*/
 
 Route::get('/user/register','UsersController@register');
 Route::get('/verify/token/{confirm_code}',['as' => 'email.verify','uses' => 'UsersController@confirmEmail']);
@@ -52,7 +52,7 @@ Route::resource('questions','QuestionsController',['names' => [
 Route::post('questions/{question}/answer','AnswersController@store');
 Route::get('question/{question}/follow','QuestionFollowController@follow');
 
-Route::get('notifications','NotificationsController@index');
+Route::get('about','NotificationsController@index');
 Route::get('notifications/{notification}','NotificationsController@show');
 
 Route::get('inbox','InboxController@index');
