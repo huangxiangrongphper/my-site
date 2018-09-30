@@ -35,8 +35,8 @@ class InboxController extends Controller
     public function store($dialogId)
     {
         $message   = Message::where('dialog_id',$dialogId)->first();
-        dd($message);
         $toUserId  = $message->from_user_id === user()->id ? $message->to_user_id : $message->from_user_id;
+        dd($toUserId);
         Message::create([
             'from_user_id' => user()->id,
             'to_user_id'   => $toUserId,
