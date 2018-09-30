@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mailer\UserMailer;
+use App\Notifications\UserRegisterNotification;
 use App\User;
 use EasyWeChat\Payment\Kernel\Exceptions\SandboxException;
 use Illuminate\Http\Request;
@@ -37,7 +38,9 @@ class UsersController extends Controller
 
         $userdata = array_merge($user,$data);
 
-        User::register($userdata);
+        $user = User::register($userdata);
+
+        $user->notify(new UserRegisterNotification($user));
 
         sleep(2);
         \Session::flash('user_register_success','恭喜您,注册成功.请马上去邮箱激活账号🤗');
