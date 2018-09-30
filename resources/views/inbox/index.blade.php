@@ -33,8 +33,8 @@
                                     {{ $messageGroup->first()->body }}
                                 </a>
                             </p>
-                        @endforeach
                         </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
