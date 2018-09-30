@@ -29,14 +29,14 @@ class InboxController extends Controller
     {
         $messages = Message::where('dialog_id',$dialogId)->latest()->get();
 
+        $messages->markAsRead();
+
         return view('inbox.show',compact('messages','dialogId'));
     }
 
     public function store($dialogId)
     {
         $message   = Message::where('dialog_id',$dialogId)->first();
-
-        $message->markAsRead();
 
         $toUserId  = $message->from_user_id === user()->id ? $message->to_user_id : $message->from_user_id;
         Message::create([
