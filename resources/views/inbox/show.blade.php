@@ -8,10 +8,10 @@
                     <div class="panel-body">
                         <form action="/inbox/{{$dialogId}}/store" method="post">
                             {{csrf_field()}}
-                            <div class="form-group pull-right">
+                            <div class="form-group">
                                 <textarea name="body" class="form-control"></textarea>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group pull-right">
                                 <button class="btn btn-success">发送私信</button>
                             </div>
                         </form>
