@@ -131,6 +131,7 @@
                         @endif
                         @if(Auth::check() && user()->id != $question->user_id)
                         <send-message user="{{ $question->user_id }}" ></send-message>
+                        @elseif( user()->id == $question->user_id )
                         @else
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    <a href="{{url('user/login')}}" class="btn btn-default">发送私信</a>
                         @endif
