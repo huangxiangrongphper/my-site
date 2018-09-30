@@ -25,6 +25,8 @@ class NotificationsController extends Controller
     {
         $notification->markAsRead();
 
+        $notification->delete();
+
         return back();
     }
 }
