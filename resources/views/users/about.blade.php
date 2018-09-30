@@ -9,6 +9,9 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">个人中心</div>
                     <div class="panel-body">
+                        @foreach($user->notifications as $notification)
+                            @include('notifications.'.snake_case(class_basename($notification->type)))
+                        @endforeach
                     </div>
                 </div>
             </div>
