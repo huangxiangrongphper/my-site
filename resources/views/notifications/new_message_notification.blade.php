@@ -1,5 +1,5 @@
 <li class="notifications">
-    <a href="{{ $notification->data['dialog'] }}">
+    <a href="/inbox/{{ $notification->data['dialog'] }}">
         {{ $notification->data['name'] }} 给你发了一条私信🙈
     </a>
 </li>
