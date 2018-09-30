@@ -20,4 +20,11 @@ class NotificationsController extends Controller
 
         return redirect(\Request::query('redirect_url'));
     }
+
+    public function register(DatabaseNotification $notification)
+    {
+        $notification->markAsRead();
+
+        return back();
+    }
 }

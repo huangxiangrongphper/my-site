@@ -54,6 +54,7 @@ Route::get('question/{question}/follow','QuestionFollowController@follow');
 
 Route::get('about','NotificationsController@index');
 Route::get('notifications/{notification}','NotificationsController@show');
+Route::get('notifications/{notification}/register','NotificationsController@register');
 
 Route::get('inbox','InboxController@index');
 Route::get('inbox/{dialogId}','InboxController@show');
