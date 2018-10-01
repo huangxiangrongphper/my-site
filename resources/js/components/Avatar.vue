@@ -1,5 +1,5 @@
 <template>
-<div>
+<div style="text-align: center;">
     <my-upload field="img"
                @crop-success="cropSuccess"
                @crop-upload-success="cropUploadSuccess"
@@ -11,8 +11,8 @@
                :params="params"
                :headers="headers"
                img-format="png"></my-upload>
-    <img :src="imgDataUrl">
-    <a class="btn" @click="toggleShow">修改头像</a>
+    <img :src="imgDataUrl" style="width: 80px;">
+    <div style="margin-top: 20px;"><button class="btn btn-default" @click="toggleShow">修改头像</button></div>
 </div>
 </template>
 
