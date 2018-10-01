@@ -20,9 +20,10 @@
     import 'babel-polyfill'; // es6 shim
     import myUpload from 'vue-image-crop-upload';
     export default {
+        props:['avatar'],
         data() {
             return {
-                show: true,
+                show: false,
                 params: {
                     token: '123456798',
                     name: 'avatar'
@@ -30,7 +31,7 @@
                 headers: {
                     smail: '*_~'
                 },
-                imgDataUrl: '' // the datebase64 url of created image
+                imgDataUrl: this.avatar
             }
         },
         components: {
