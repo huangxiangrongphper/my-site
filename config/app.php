@@ -163,6 +163,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         YuanChao\Editor\EndaEditorServiceProvider::class,
         Overtrue\LaravelUEditor\UEditorServiceProvider::class,
+        Overtrue\LaravelFilesystem\Qiniu\QiniuStorageServiceProvider::class,
 
 
     ],
