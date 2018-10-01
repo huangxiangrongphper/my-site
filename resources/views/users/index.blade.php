@@ -12,7 +12,7 @@
                             <div class="form-group{{ $errors->has('city') ? 'has-error' : '' }}">
                                 <label for="city" class="col-md-4 control-label">现居城市</label>
                                 <div class="col-md-6">
-                                    <input type="text" id="city" class="form-control" name="city" required value="{{ user()->settings['city'] }}" >
+                                    <input type="text" id="city" class="form-control" name="city" required value="{{ user()->settings['bio'] ? 'user()->settings[\'city\']' : '' }}" >
                                     @if ($errors->has('city'))
                                         <span class="help-block">
                                           <strong>{{ $errors->first('city') }}</strong>
@@ -23,7 +23,7 @@
                             <div class="form-group{{ $errors->has('city') ? 'has-error' : '' }}">
                                 <label for="bio" class="col-md-4 control-label">个人简介</label>
                                 <div class="col-md-6">
-                                    <textarea id="bio" type="text" class="form-control" name="bio" required>{{ user()->settings['bio'] }}</textarea>
+                                    <textarea id="bio" type="text" class="form-control" name="bio" required>{{ user()->settings['bio'] ? 'user()->settings[\'bio\']' : '' }}</textarea>
                                     @if ($errors->has('bio'))
                                         <span class="help-block">
                                           <strong>{{ $errors->first('bio') }}</strong>
