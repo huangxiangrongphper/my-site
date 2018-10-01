@@ -90,7 +90,7 @@ class User extends Authenticatable
     ];
 
     protected $casts = [
-
+        'settings' => 'json'
     ];
 
     public function discussions()
