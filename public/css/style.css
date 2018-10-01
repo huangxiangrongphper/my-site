@@ -63,10 +63,6 @@
     width: 100%;
 }
 
-.panel-body.user-avatar img {
-    width: 36px;
-}
-
 a.topic {
     background-color: #eff6fa;
     padding: 1px 10px 0;
