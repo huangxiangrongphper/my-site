@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\SettingRequest;
 
 class SettingController extends Controller
 {
@@ -11,7 +11,7 @@ class SettingController extends Controller
         return view('users.index');
     }
 
-    public function store(Request $request)
+    public function store(SettingRequest $request)
     {
        user()->settings()->merge($request->all());
 
