@@ -43,7 +43,7 @@
                         </a>
                     <ul class="dropdown-menu" aria-labelledby="dLabel">
                         <li><a href="/user/avatar"> <i class="fa fa-user"></i> 更换头像</a></li>
-                        <li><a href="#"> <i class="fa fa-cog"></i> 更换密码</a></li>
+                        <li><a href="/password"> <i class="fa fa-cog"></i> 更换密码</a></li>
                         <li><a href="/about"> <i class="fa fa-heart"></i> 个人中心</a></li>
                         <li role="separator" class="divider"></li>
                         <li> <a href="/logout">  <i class="fa fa-sign-out"></i> 退出登录</a></li>
