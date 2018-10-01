@@ -17,7 +17,7 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $fillable = ['name', 'email', 'password','avatar','confirm_code','remember_token','api_token'];
+    protected $fillable = ['name', 'email', 'password','avatar','confirm_code','remember_token','api_token','settings'];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -89,6 +89,10 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    protected $casts = [
+
+    ];
+
     public function discussions()
     {
         return $this->hasMany(Discussion::class);
@@ -111,5 +115,10 @@ class User extends Authenticatable
         event(new UserRegistered($user));
 
         return $user;
+    }
+
+    public function settings()
+    {
+        return new Setting($this);
     }
 }

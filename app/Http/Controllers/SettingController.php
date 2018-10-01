@@ -10,4 +10,11 @@ class SettingController extends Controller
     {
         return view('users.index');
     }
+
+    public function store(Request $request)
+    {
+       user()->settings()->merge($request->all());
+
+        return back();
+    }
 }

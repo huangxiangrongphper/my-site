@@ -35,6 +35,7 @@ class UsersController extends Controller
             'avatar'=>'/images/default-avatar.png',
             'password' => bcrypt($request->get('password')),
             'api_token' => str_random(60),
+            'settings' => ['city' => ''],
         ];
 
         $userdata = array_merge($user,$data);
