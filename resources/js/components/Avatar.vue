@@ -48,7 +48,6 @@
              * [param] field
              */
             cropSuccess(imgDataUrl, field){
-                console.log('-------- crop success --------');
                 this.imgDataUrl = imgDataUrl;
             },
             /**
@@ -58,9 +57,8 @@
              * [param] field
              */
             cropUploadSuccess(response, field){
-                console.log('-------- upload success --------');
-                console.log(response);
-                console.log('field: ' + field);
+                this.imgDataUrl = response.url;
+                this.toggleShow();
             },
             /**
              * upload fail
