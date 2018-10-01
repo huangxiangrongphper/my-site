@@ -98,7 +98,7 @@ class UsersController extends Controller
         $filename  = md5(time().user()->id).'.'.$file->getClientOriginalExtension();
         $file->move(public_path('avatars'),$filename);
 
-        user()->avatar = asset(public_path('avatars/'.$filename));
+        user()->avatar = '/avatars/'.$filename;
         user()->save();
 
         return ['url' => user()->avatar];
