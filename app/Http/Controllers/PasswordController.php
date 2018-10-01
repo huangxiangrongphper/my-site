@@ -17,12 +17,12 @@ class PasswordController extends Controller
         if(Hash::check($request->get('old_password'),user()->password)) {
             user()->password = bcrypt($request->get('password'));
             user()->save();
-            flash('密码修改成功','success');
+            flash('密码修改成功','success')->important();
 
             return back();
         }
 
-        flash('密码修改失败','danger');
+        flash('密码修改失败','danger')->important();
         return back();
     }
 }
