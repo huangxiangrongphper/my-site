@@ -1,6 +1,7 @@
 @extends('app')
 @section('content')
     <div class="container" >
+        @include('flash::message')
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
@@ -49,4 +50,7 @@
             </div>
         </div>
     </div>
+    <script>
+        $('#flash-overlay-modal').modal();
+    </script>
 @stop
