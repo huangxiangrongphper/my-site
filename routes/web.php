@@ -66,6 +66,9 @@ Route::post('inbox/{dialogId}/store','InboxController@store');
 Route::get('password','PasswordController@password');
 Route::post('password/update','PasswordController@update');
 
+Route::get('setting','SettingController@index');
+Route::post('setting','SettingController@store');
+
 
 
 
