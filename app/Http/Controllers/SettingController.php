@@ -15,6 +15,7 @@ class SettingController extends Controller
     {
        user()->settings()->merge($request->all());
 
+        flash('个人信息修改成功💐💐','success')->important();
         return back();
     }
 }
