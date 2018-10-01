@@ -159,7 +159,7 @@
                 <div class="panel-heading">
                     {{ $question->answers_count }} 个答案
                 </div>
-                <div class="panel-body">
+                <div class="panel-body content">
                     @foreach($question->answers as $answers)
                         <div class="media">
                             <div class="media-left">
@@ -167,7 +167,7 @@
                                     <img src="{{ $question->user->avatar }}" alt="64x64" class="media-object img-circle" style="width: 36px;height: 36px">
                                 </a>
                             </div>
-                            <div class="media-body content" >
+                            <div class="media-body" >
                                 <h4 class="media-heading">
                                     <a href="/user/{{ $answers->user->name }}">
                                         {{ $answers->user->name }}
