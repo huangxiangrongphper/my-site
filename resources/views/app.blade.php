@@ -14,6 +14,11 @@
     <script src="/js/jquery.Jcrop.min.js"></script>
     <script src="/js/jquery.form.js"></script>
     <script src="/js/select2.min.js"></script>
+    <script>
+        window.Laravel = <?php echo json_encode([
+            'csrfToken' => csrf_token(),
+        ]) ?>;
+    </script>
 </head>
 <body>
 <nav class="navbar navbar-default navbar-static-top">

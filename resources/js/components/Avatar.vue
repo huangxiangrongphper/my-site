@@ -7,7 +7,7 @@
                v-model="show"
                :width="300"
                :height="300"
-               url="/upload"
+               url="/avatar"
                :params="params"
                :headers="headers"
                img-format="png"></my-upload>
@@ -25,8 +25,8 @@
             return {
                 show: false,
                 params: {
-                    token: '123456798',
-                    name: 'avatar'
+                    _token: Laravel.csrfToken,
+                    name: 'img'
                 },
                 headers: {
                     smail: '*_~'
@@ -57,9 +57,9 @@
              * [param] jsonData  server api return data, already json encode
              * [param] field
              */
-            cropUploadSuccess(jsonData, field){
+            cropUploadSuccess(response, field){
                 console.log('-------- upload success --------');
-                console.log(jsonData);
+                console.log(response);
                 console.log('field: ' + field);
             },
             /**

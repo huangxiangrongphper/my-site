@@ -94,31 +94,14 @@ class UsersController extends Controller
 
     public function changeAvatar(Request $request)
     {
-        $file = $request->file('avatar');
-        $input = array('image' => $file);
-        $rules = array(
-            'image' => 'image'
-        );
-        $validator = \Validator::make($input, $rules);
-        if ( $validator->fails() ){
-            return \Response::json([
-                'success' => false,
-                'errors'  => $validator->getMessageBag()->toArray(),
-            ]);
-        }
+        $file      = $request->file('img');
+        $filename  = md5(time().user()->id).'.'.$file->getClientOriginalExtension();
+        $file->move(public_path('avatars'),$filename);
 
-        $destinationPath = 'uploads/';
-        $filename = \Auth::user()->id.'_'.time().$file->getClientOriginalName();
-        $file->move($destinationPath,$filename);
-        Image::make($destinationPath.$filename)->fit(400)->save();
+        user()->avatar = asset(public_path('avatars/'.$filename));
+        user()->save();
 
-
-        return \Response::json([
-            'success' => true,
-            'avatar'  => asset($destinationPath.$filename),
-            'image'  => $destinationPath.$filename,
-        ]);
-
+        return ['url' => user()->avatar];
     }
 
     public function cropAvatar(Request $request)

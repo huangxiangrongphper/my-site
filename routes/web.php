@@ -27,8 +27,10 @@ Route::get('/verify/token/{confirm_code}',['as' => 'email.verify','uses' => 'Use
 Route::post('/user/register','UsersController@store');
 Route::get('/user/login','UsersController@login')->name('login');
 Route::post('/user/login','UsersController@signin');
+
 Route::get('/user/avatar','UsersController@avatar');
 Route::post('/avatar','UsersController@changeAvatar');
+
 Route::post('/crop/api','UsersController@cropAvatar');
 Route::post('/post/upload','PostsController@upload');
 Route::match(['get','post'],'password/reset','UsersController@reset');
